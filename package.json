@@ -16,6 +16,7 @@
   "dependencies": {
     "@quasar/extras": "^1.16.8",
     "@quasar/vite-plugin": "^1.6.0",
+    "@vueuse/core": "^10.6.1",
     "quasar": "^2.14.0",
     "sass": "^1.69.5",
     "vue": "^3.3.4",

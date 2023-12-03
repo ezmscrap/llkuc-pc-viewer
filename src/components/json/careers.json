@@ -1,0 +1,642 @@
+{
+  "waitedThreeYears": {
+    "label": "3年待った",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 6
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 4
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 5
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 3
+      }
+    },
+    "normalSkills": {
+      "telecom": {
+        "label": "通信",
+        "value": 0
+      },
+      "firearms": {
+        "label": "歩兵火器",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:6,能力-技量:4,能力-反応:4,能力-体力:4,能力-知力:5,能力-感応:3,技能-通信:<熟練度か3の大きい方>,技能-歩兵火器:<熟練度か3の大きい方>"
+  },
+  "msRacer": {
+    "label": "MSレーサー",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 6
+      },
+      "physical": {
+        "label": "体力",
+        "value": 4
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 3
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 5
+      }
+    },
+    "normalSkills": {
+      "msPiloting": {
+        "label": "MS操縦",
+        "value": 0
+      },
+      "engineering": {
+        "label": "メカニクス",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:4,能力-反応:6,能力-体力:4,能力-知力:3,能力-感応:5,技能-MS操縦:<熟練度か3の大きい方>,技能-メカニクス:<熟練度か3の大きい方>"
+  },
+  "amateurMsOperator": {
+    "label": "アマチュアMS乗り",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 6
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 5
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 4
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 3
+      }
+    },
+    "normalSkills": {
+      "msPiloting": {
+        "label": "MS操縦",
+        "value": 0
+      },
+      "software": {
+        "label": "ソフトウェア",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:6,能力-技量:4,能力-反応:4,能力-体力:5,能力-知力:4,能力-感応:3,技能-MS操縦:<熟練度か3の大きい方>,技能-ソフトウェア:<熟練度か3の大きい方>"
+  },
+  "braveBattles": {
+    "label": "ボロで勇戦",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 4
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 3
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 5
+      }
+    },
+    "normalSkills": {
+      "martialArts": {
+        "label": "個人格闘",
+        "value": 0
+      },
+      "avoidance": {
+        "label": "体術",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:4,能力-知力:3,能力-感応:5,技能-個人格闘:<熟練度か3の大きい方>,技能-体術:<熟練度か3の大きい方>"
+  },
+  "helpless": {
+    "label": "孤立無援",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 6
+      },
+      "physical": {
+        "label": "体力",
+        "value": 5
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 3
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 4
+      }
+    },
+    "normalSkills": {
+      "telecom": {
+        "label": "通信",
+        "value": 0
+      },
+      "engineering": {
+        "label": "メカニクス",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:4,能力-反応:6,能力-体力:5,能力-知力:3,能力-感応:4,技能-通信:<熟練度か3の大きい方>,技能-メカニクス:<熟練度か3の大きい方>"
+  },
+  "hardship": {
+    "label": "苦労人",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 3
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 4
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 5
+      }
+    },
+    "normalSkills": {
+      "tactics": {
+        "label": "戦術",
+        "value": 0
+      },
+      "insider": {
+        "label": "情報通",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:3,能力-知力:4,能力-感応:5,技能-戦術:<熟練度か3の大きい方>,技能-情報通:<熟練度か3の大きい方>"
+  },
+  "sawHell": {
+    "label": "地獄を見た",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 6
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 3
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 4
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 5
+      }
+    },
+    "normalSkills": {
+      "conceal": {
+        "label": "隠蔽",
+        "value": 0
+      },
+      "insider": {
+        "label": "情報通",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:6,能力-技量:4,能力-反応:4,能力-体力:3,能力-知力:4,能力-感応:5,技能-隠蔽:<熟練度か3の大きい方>,技能-情報通:<熟練度か3の大きい方>"
+  },
+  "formerPrisoners": {
+    "label": "元捕虜",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 6
+      },
+      "physical": {
+        "label": "体力",
+        "value": 4
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 3
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 5
+      }
+    },
+    "normalSkills": {
+      "Knowledgeable": {
+        "label": "博識",
+        "value": 0
+      },
+      "medicine": {
+        "label": "医術",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:4,能力-反応:6,能力-体力:4,能力-知力:3,能力-感応:5,技能-博識:<熟練度か3の大きい方>,技能-医術:<熟練度か3の大きい方>"
+  },
+  "returnees": {
+    "label": "前線帰り",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 6
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 5
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 3
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 4
+      }
+    },
+    "normalSkills": {
+      "conceal": {
+        "label": "隠蔽",
+        "value": 0
+      },
+      "martialArts": {
+        "label": "個人格闘",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:6,能力-技量:4,能力-反応:4,能力-体力:5,能力-知力:3,能力-感応:4,技能-隠蔽:<熟練度か3の大きい方>,技能-個人格闘:<熟練度か3の大きい方>"
+  },
+  "garbagePicker": {
+    "label": "ジャンク屋",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 3
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 5
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 4
+      }
+    },
+    "normalSkills": {
+      "engineering": {
+        "label": "メカニクス",
+        "value": 0
+      },
+      "software": {
+        "label": "ソフトウェア",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:3,能力-知力:5,能力-感応:4,技能-メカニクス:<熟練度か3の大きい方>,技能-ソフトウェア:<熟練度か3の大きい方>"
+  },
+  "programEngineer": {
+    "label": "プログラム技術者",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 4
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 5
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 3
+      }
+    },
+    "normalSkills": {
+      "Knowledgeable": {
+        "label": "博識",
+        "value": 0
+      },
+      "software": {
+        "label": "ソフトウェア",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:4,能力-知力:5,能力-感応:3,技能-博識:<熟練度か3の大きい方>,技能-ソフトウェア:<熟練度か3の大きい方>"
+  },
+  "honorStudent": {
+    "label": "優等生",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 4
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 5
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 3
+      }
+    },
+    "normalSkills": {
+      "telecom": {
+        "label": "通信",
+        "value": 0
+      },
+      "Knowledgeable": {
+        "label": "博識",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:4,能力-知力:5,能力-感応:3,技能-通信:<熟練度か3の大きい方>,技能-博識:<熟練度か3の大きい方>"
+  },
+  "technicalOfficer": {
+    "label": "技術士官",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 3
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 5
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 4
+      }
+    },
+    "normalSkills": {
+      "engineering": {
+        "label": "メカニクス",
+        "value": 0
+      },
+      "software": {
+        "label": "ソフトウェア",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:3,能力-知力:5,能力-感応:4,技能-メカニクス:<熟練度か3の大きい方>,技能-ソフトウェア:<熟練度か3の大きい方>"
+  },
+  "flyingAce": {
+    "label": "撃墜王",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 3
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 4
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 5
+      }
+    },
+    "normalSkills": {
+      "tactics": {
+        "label": "戦術",
+        "value": 0
+      },
+      "airplaneControl": {
+        "label": "航空機操縦",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:3,能力-知力:4,能力-感応:5,技能-戦術:<熟練度か3の大きい方>,技能-航空機操縦:<熟練度か3の大きい方>"
+  },
+  "diplomat": {
+    "label": "外交官",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 4
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 6
+      },
+      "physical": {
+        "label": "体力",
+        "value": 3
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 5
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 4
+      }
+    },
+    "normalSkills": {
+      "tactics": {
+        "label": "戦術",
+        "value": 0
+      },
+      "command": {
+        "label": "指揮",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:3,能力-知力:4,能力-感応:5,技能-戦術:<熟練度か3の大きい方>,技能-航空機操縦:<熟練度か3の大きい方>"
+  },
+  "poor": {
+    "label": "貧困層出身",
+    "abilityValues": {
+      "motion": {
+        "label": "運動",
+        "value": 4
+      },
+      "Technique": {
+        "label": "技量",
+        "value": 6
+      },
+      "reflexes": {
+        "label": "反応",
+        "value": 4
+      },
+      "physical": {
+        "label": "体力",
+        "value": 5
+      },
+      "intelligence": {
+        "label": "知力",
+        "value": 3
+      },
+      "psychic": {
+        "label": "感応",
+        "value": 4
+      }
+    },
+    "normalSkills": {
+      "conceal": {
+        "label": "隠蔽",
+        "value": 0
+      },
+      "insider": {
+        "label": "情報通",
+        "value": 0
+      }
+    },
+    "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:5,能力-知力:3,能力-感応:4,技能-隠蔽:<熟練度か3の大きい方>,技能-情報通:<熟練度か3の大きい方>"
+  }
+}

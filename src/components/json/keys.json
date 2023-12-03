@@ -1,0 +1,30 @@
+{
+  "abilityKeys": ["motion", "Technique", "reflexes", "physical", "intelligence", "psychic"],
+  "guidelineKeys": ["firstGuideline", "secondGuideline"],
+  "careerKeys": [
+    "firstCareer",
+    "secondCareer",
+    "thirdCareer",
+    "fourthCareer",
+    "fifthCareer",
+    "sixthCareer"
+  ],
+  "normalSkillKeys": [
+    "driving",
+    "shipHandling",
+    "airplaneControl",
+    "msPiloting",
+    "telecom",
+    "firearms",
+    "martialArts",
+    "avoidance",
+    "software",
+    "engineering",
+    "tactics",
+    "insider",
+    "conceal",
+    "Knowledgeable",
+    "medicine",
+    "command"
+  ]
+}

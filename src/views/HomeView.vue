@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import LlkucPcViewer from '../components/LlkucPcViewer.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <LlkucPcViewer />
   </main>
 </template>

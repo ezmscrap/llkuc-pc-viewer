@@ -1,0 +1,1266 @@
+{
+  "firstGuideline": {
+    "survivalUniformity": {
+      "label": "生存(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 7
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 7
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "回避陣形",
+        "key": "evasionFormation",
+        "explanation": "回避判定+3(回数制限なし)"
+      },
+      "explanation": "能力-運動:7,能力-技量:4,能力-反応:4,能力-体力:7,能力-知力:4,能力-感応:4"
+    },
+    "survivalUsually": {
+      "label": "生存(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 7
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 7
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 11
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 2
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "射線予測",
+        "key": "rayPrediction",
+        "explanation": "回避判定 完全成功(1回)"
+      },
+      "explanation": "能力-運動:7,能力-技量:7,能力-反応:2,能力-体力:11,能力-知力:2,能力-感応:1"
+    },
+    "survivalEmphasis": {
+      "label": "生存(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 1
+        },
+        "physical": {
+          "label": "体力",
+          "value": 16
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "被弾軽減",
+        "key": "hitReduction",
+        "explanation": "ラウンド限定HP(機体耐久)36点配布"
+      },
+      "explanation": "能力-運動:4,能力-技量:4,能力-反応:1,能力-体力:16,能力-知力:1,能力-感応:1"
+    },
+    "defenseUniformity": {
+      "label": "防衛(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 7
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 7
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "防御体勢",
+        "key": "defensivePosture",
+        "explanation": "全被ダメージ(誘爆前)-4(装甲有効)(回数制限なし)"
+      },
+      "explanation": "能力-運動:4,能力-技量:4,能力-反応:7,能力-体力:4,能力-知力:7,能力-感応:4"
+    },
+    "defenseUsually": {
+      "label": "防衛(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 7
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 7
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 11
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 2
+        }
+      },
+      "commandSkill": {
+        "label": "損害制御",
+        "key": "damageControl",
+        "explanation": "ダメージ無効化(1回)"
+      },
+      "explanation": "能力-運動:7,能力-技量:2,能力-反応:7,能力-体力:1,能力-知力:11,能力-感応:2"
+    },
+    "defenseEmphasis": {
+      "label": "防衛(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 1
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 16
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "中枢防護",
+        "key": "protectTheCenter",
+        "explanation": "機体中枢判定無効化(回数制限なし)"
+      },
+      "explanation": "能力-運動:4,能力-技量:1,能力-反応:4,能力-体力:1,能力-知力:16,能力-感応:1"
+    },
+    "honorUniformity": {
+      "label": "名誉(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 7
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 7
+        }
+      },
+      "commandSkill": {
+        "label": "常動強化",
+        "key": "skillful",
+        "explanation": "MP1スキル無料化(回数制限なし)"
+      },
+      "explanation": "能力-運動:4,能力-技量:7,能力-反応:4,能力-体力:4,能力-知力:4,能力-感応:7"
+    },
+    "honorUsually": {
+      "label": "名誉(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 7
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 7
+        },
+        "physical": {
+          "label": "体力",
+          "value": 2
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 11
+        }
+      },
+      "commandSkill": {
+        "label": "特技解放",
+        "key": "unlockTheskill",
+        "explanation": "MPスキル無料化(3回)"
+      },
+      "explanation": "能力-運動:2,能力-技量:7,能力-反応:7,能力-体力:2,能力-知力:1,能力-感応:11"
+    },
+    "honorEmphasis": {
+      "label": "名誉(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 1
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 16
+        }
+      },
+      "commandSkill": {
+        "label": "士気高揚",
+        "key": "moraleBoost",
+        "explanation": "ラウンド限定MP12点配布"
+      },
+      "explanation": "能力-運動:1,能力-技量:4,能力-反応:4,能力-体力:1,能力-知力:1,能力-感応:16"
+    },
+    "battleUniformity": {
+      "label": "戦闘(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 7
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 7
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "一気呵成",
+        "key": "AllAtOnce",
+        "explanation": "全与ダメージ(誘爆前)+4(回数制限なし)"
+      },
+      "explanation": "能力-運動:7,能力-技量:4,能力-反応:4,能力-体力:7,能力-知力:4,能力-感応:4"
+    },
+    "battleUsually": {
+      "label": "戦闘(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 11
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 7
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 7
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "損害拡大",
+        "key": "increasedDamage",
+        "explanation": "ダメージ2倍(1回)"
+      },
+      "explanation": "能力-運動:11,能力-技量:2,能力-反応:2,能力-体力:7,能力-知力:7,能力-感応:1"
+    },
+    "battleUEmphasis": {
+      "label": "戦闘(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 16
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 1
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 1
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "中枢確定",
+        "key": "criticalConfirmed",
+        "explanation": "機体中枢判定発動(重複なし)(回数制限なし)"
+      },
+      "explanation": "能力-運動:16,能力-技量:1,能力-反応:1,能力-体力:4,能力-知力:4,能力-感応:1"
+    },
+    "principleUniformity": {
+      "label": "主義(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 7
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 7
+        }
+      },
+      "commandSkill": {
+        "label": "戦術支援",
+        "key": "tacticalSupport",
+        "explanation": "命中判定+3(回数制限なし)"
+      },
+      "explanation": "能力-運動:4,能力-技量:7,能力-反応:4,能力-体力:4,能力-知力:4,能力-感応:7"
+    },
+    "principleUsually": {
+      "label": "主義(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 11
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 7
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 7
+        }
+      },
+      "commandSkill": {
+        "label": "進路予測",
+        "key": "tacticalPrediction",
+        "explanation": "命中判定 完全成功(1回)"
+      },
+      "explanation": "能力-運動:2,能力-技量:11,能力-反応:2,能力-体力:7,能力-知力:1,能力-感応:7"
+    },
+    "principleEmphasis": {
+      "label": "主義(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 1
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 16
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 1
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "戦意発揚",
+        "key": "boostedFightingSpirit",
+        "explanation": "ボーナスPAD任意1個発動(重複あり)(回数制限なし)"
+      },
+      "explanation": "能力-運動:1,能力-技量:16,能力-反応:1,能力-体力:4,能力-知力:1,能力-感応:4"
+    },
+    "harmonyUniformity": {
+      "label": "調和(均一)",
+      "explanation": "能力-運動:4,能力-技量:4,能力-反応:7,能力-体力:4,能力-知力:7,能力-感応:4",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 7
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 7
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "士気低下",
+        "key": "suppressMorale",
+        "explanation": "敵命中判定-3"
+      }
+    },
+    "harmonyUsually": {
+      "label": "調和(通常)",
+      "explanation": "能力-運動:2,能力-技量:2,能力-反応:11,能力-体力:1,能力-知力:7,能力-感応:7",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 11
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 7
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 7
+        }
+      },
+      "commandSkill": {
+        "label": "反転攻勢",
+        "key": "reversalOffensive",
+        "explanation": "イニシアティブ判定を強制取得"
+      }
+    },
+    "harmonyEmphasis": {
+      "label": "調和(強調)",
+      "explanation": "能力-運動:1,能力-技量:1,能力-反応:16,能力-体力:1,能力-知力:4,能力-感応:4",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 1
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 1
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 16
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "重圧発露",
+        "key": "heavyPressure",
+        "explanation": "敵1体 1R能動行動なし(攻撃不能)"
+      }
+    }
+  },
+  "secondGuideline": {
+    "survivalUniformity": {
+      "label": "生存(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 3
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 3
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 3
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 3
+        }
+      },
+      "commandSkill": {
+        "label": "回避陣形",
+        "key": "evasionFormation",
+        "explanation": "回避判定+3(回数制限なし)"
+      },
+      "explanation": "能力-運動:4,能力-技量:3,能力-反応:3,能力-体力:4,能力-知力:3,能力-感応:3"
+    },
+    "survivalUsually": {
+      "label": "生存(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 5
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 5
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 5
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 2
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "射線予測",
+        "key": "rayPrediction",
+        "explanation": "回避判定 完全成功(1回)"
+      },
+      "explanation": "能力-運動:5,能力-技量:5,能力-反応:2,能力-体力:5,能力-知力:2,能力-感応:1"
+    },
+    "survivalEmphasis": {
+      "label": "生存(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 9
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 0
+        },
+        "physical": {
+          "label": "体力",
+          "value": 9
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 0
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 0
+        }
+      },
+      "commandSkill": {
+        "label": "被弾軽減",
+        "key": "hitReduction",
+        "explanation": "ラウンド限定HP(機体耐久)36点配布"
+      },
+      "explanation": "能力-運動:9,能力-技量:2,能力-反応:0,能力-体力:9,能力-知力:0,能力-感応:0"
+    },
+    "defenseUniformity": {
+      "label": "防衛(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 3
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 3
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 3
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 3
+        }
+      },
+      "commandSkill": {
+        "label": "防御体勢",
+        "key": "defensivePosture",
+        "explanation": "全被ダメージ(誘爆前)-4(装甲有効)(回数制限なし)"
+      },
+      "explanation": "能力-運動:3,能力-技量:3,能力-反応:4,能力-体力:3,能力-知力:4,能力-感応:3"
+    },
+    "defenseUsually": {
+      "label": "防衛(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 5
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 5
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 5
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 2
+        }
+      },
+      "commandSkill": {
+        "label": "損害制御",
+        "key": "damageControl",
+        "explanation": "ダメージ無効化(1回)"
+      },
+      "explanation": "能力-運動:5,能力-技量:2,能力-反応:5,能力-体力:1,能力-知力:5,能力-感応:2"
+    },
+    "defenseEmphasis": {
+      "label": "防衛(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 0
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 9
+        },
+        "physical": {
+          "label": "体力",
+          "value": 0
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 9
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 0
+        }
+      },
+      "commandSkill": {
+        "label": "中枢防護",
+        "key": "protectTheCenter",
+        "explanation": "機体中枢判定無効化(回数制限なし)"
+      },
+      "explanation": "能力-運動:2,能力-技量:0,能力-反応:9,能力-体力:0,能力-知力:9,能力-感応:0"
+    },
+    "honorUniformity": {
+      "label": "名誉(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 3
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 3
+        },
+        "physical": {
+          "label": "体力",
+          "value": 3
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 3
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "常動強化",
+        "key": "skillful",
+        "explanation": "MP1スキル無料化(回数制限なし)"
+      },
+      "explanation": "能力-運動:3,能力-技量:4,能力-反応:3,能力-体力:3,能力-知力:3,能力-感応:4"
+    },
+    "honorUsually": {
+      "label": "名誉(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 5
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 5
+        },
+        "physical": {
+          "label": "体力",
+          "value": 2
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 5
+        }
+      },
+      "commandSkill": {
+        "label": "特技解放",
+        "key": "unlockTheskill",
+        "explanation": "MPスキル無料化(3回)"
+      },
+      "explanation": "能力-運動:2,能力-技量:5,能力-反応:5,能力-体力:2,能力-知力:1,能力-感応:5"
+    },
+    "honorEmphasis": {
+      "label": "名誉(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 0
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 9
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 0
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 0
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 9
+        }
+      },
+      "commandSkill": {
+        "label": "士気高揚",
+        "key": "moraleBoost",
+        "explanation": "ラウンド限定MP12点配布"
+      },
+      "explanation": "能力-運動:0,能力-技量:9,能力-反応:2,能力-体力:0,能力-知力:0,能力-感応:9"
+    },
+    "battleUniformity": {
+      "label": "戦闘(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 4
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 3
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 3
+        },
+        "physical": {
+          "label": "体力",
+          "value": 4
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 3
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 3
+        }
+      },
+      "commandSkill": {
+        "label": "一気呵成",
+        "key": "AllAtOnce",
+        "explanation": "全与ダメージ(誘爆前)+4(回数制限なし)"
+      },
+      "explanation": "能力-運動:4,能力-技量:3,能力-反応:3,能力-体力:4,能力-知力:3,能力-感応:3"
+    },
+    "battleUsually": {
+      "label": "戦闘(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 5
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 5
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 5
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 1
+        }
+      },
+      "commandSkill": {
+        "label": "損害拡大",
+        "key": "increasedDamage",
+        "explanation": "ダメージ2倍(1回)"
+      },
+      "explanation": "能力-運動:5,能力-技量:2,能力-反応:2,能力-体力:5,能力-知力:5,能力-感応:1"
+    },
+    "battleUEmphasis": {
+      "label": "戦闘(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 9
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 0
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 0
+        },
+        "physical": {
+          "label": "体力",
+          "value": 9
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 2
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 0
+        }
+      },
+      "commandSkill": {
+        "label": "中枢確定",
+        "key": "criticalConfirmed",
+        "explanation": "機体中枢判定発動(重複なし)(回数制限なし)"
+      },
+      "explanation": "能力-運動:9,能力-技量:0,能力-反応:0,能力-体力:9,能力-知力:2,能力-感応:0"
+    },
+    "principleUniformity": {
+      "label": "主義(均一)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 3
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 4
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 3
+        },
+        "physical": {
+          "label": "体力",
+          "value": 3
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 3
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "戦術支援",
+        "key": "tacticalSupport",
+        "explanation": "命中判定+3(回数制限なし)"
+      },
+      "explanation": "能力-運動:3,能力-技量:4,能力-反応:3,能力-体力:3,能力-知力:3,能力-感応:4"
+    },
+    "principleUsually": {
+      "label": "主義(通常)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 5
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 2
+        },
+        "physical": {
+          "label": "体力",
+          "value": 5
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 1
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 5
+        }
+      },
+      "commandSkill": {
+        "label": "進路予測",
+        "key": "tacticalPrediction",
+        "explanation": "命中判定 完全成功(1回)"
+      },
+      "explanation": "能力-運動:2,能力-技量:5,能力-反応:2,能力-体力:5,能力-知力:1,能力-感応:5"
+    },
+    "principleEmphasis": {
+      "label": "主義(強調)",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 0
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 9
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 0
+        },
+        "physical": {
+          "label": "体力",
+          "value": 2
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 0
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 9
+        }
+      },
+      "commandSkill": {
+        "label": "戦意発揚",
+        "key": "boostedFightingSpirit",
+        "explanation": "ボーナスPAD任意1個発動(重複あり)(回数制限なし)"
+      },
+      "explanation": "能力-運動:0,能力-技量:9,能力-反応:0,能力-体力:2,能力-知力:0,能力-感応:9"
+    },
+    "harmonyUniformity": {
+      "label": "調和(均一)",
+      "explanation": "能力-運動:3,能力-技量:3,能力-反応:4,能力-体力:3,能力-知力:4,能力-感応:4",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 3
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 3
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 4
+        },
+        "physical": {
+          "label": "体力",
+          "value": 3
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 4
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 4
+        }
+      },
+      "commandSkill": {
+        "label": "士気低下",
+        "key": "suppressMorale",
+        "explanation": "敵命中判定-3"
+      }
+    },
+    "harmonyUsually": {
+      "label": "調和(通常)",
+      "explanation": "能力-運動:2,能力-技量:2,能力-反応:5,能力-体力:1,能力-知力:5,能力-感応:5",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 2
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 2
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 5
+        },
+        "physical": {
+          "label": "体力",
+          "value": 1
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 5
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 5
+        }
+      },
+      "commandSkill": {
+        "label": "戦意逆転",
+        "key": "reversalOffensive",
+        "explanation": "イニシアティブ判定を強制取得"
+      }
+    },
+    "harmonyEmphasis": {
+      "label": "調和(強調)",
+      "explanation": "能力-運動:0,能力-技量:0,能力-反応:9,能力-体力:0,能力-知力:9,能力-感応:2",
+      "abilityValues": {
+        "motion": {
+          "label": "運動",
+          "value": 0
+        },
+        "Technique": {
+          "label": "技量",
+          "value": 0
+        },
+        "reflexes": {
+          "label": "反応",
+          "value": 9
+        },
+        "physical": {
+          "label": "体力",
+          "value": 0
+        },
+        "intelligence": {
+          "label": "知力",
+          "value": 9
+        },
+        "psychic": {
+          "label": "感応",
+          "value": 2
+        }
+      },
+      "commandSkill": {
+        "label": "重圧発露",
+        "key": "heavyPressure",
+        "explanation": "敵1体 1R能動行動なし(攻撃不能)"
+      }
+    }
+  }
+}

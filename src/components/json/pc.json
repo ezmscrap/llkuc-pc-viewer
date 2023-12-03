@@ -1,0 +1,606 @@
+{
+  "personalData": {
+    "name": {
+      "label": "氏名",
+      "value": "テストデータ"
+    },
+    "sex": {
+      "label": "性別",
+      "value": "不詳"
+    },
+    "height": {
+      "label": "身長",
+      "value": "未判明"
+    },
+    "weight": {
+      "label": "体重",
+      "value": "秘密"
+    },
+    "dateOfBirth": {
+      "label": "生年月日",
+      "value": "不確定"
+    }
+  },
+  "guidelines": {
+    "firstGuideline": {
+      "label": "第一指針",
+      "guideline": {
+        "key": "battleUsually",
+        "commandSkill": {
+          "label": "損害拡大",
+          "key": "increasedDamage",
+          "explanation": "ダメージ2倍(1回)"
+        },
+        "label": "戦闘(通常)",
+        "explanation": "能力-運動:11,能力-技量:2,能力-反応:2,能力-体力:7,能力-知力:7,能力-感応:1",
+        "abilityValues": {
+          "motion": {
+            "label": "運動",
+            "value": 11
+          },
+          "Technique": {
+            "label": "技量",
+            "value": 2
+          },
+          "reflexes": {
+            "label": "反応",
+            "value": 2
+          },
+          "physical": {
+            "label": "体力",
+            "value": 7
+          },
+          "intelligence": {
+            "label": "知力",
+            "value": 7
+          },
+          "psychic": {
+            "label": "感応",
+            "value": 1
+          }
+        }
+      }
+    },
+    "secondGuideline": {
+      "label": "第二指針",
+      "guideline": {
+        "key": "survivalUsually",
+        "commandSkill": {
+          "label": "射線予測",
+          "key": "rayPrediction",
+          "explanation": "回避判定 完全成功(1回)"
+        },
+        "label": "生存(通常)",
+        "explanation": "能力-運動:5,能力-技量:5,能力-反応:2,能力-体力:5,能力-知力:2,能力-感応:1",
+        "abilityValues": {
+          "motion": {
+            "label": "運動",
+            "value": 5
+          },
+          "Technique": {
+            "label": "技量",
+            "value": 5
+          },
+          "reflexes": {
+            "label": "反応",
+            "value": 2
+          },
+          "physical": {
+            "label": "体力",
+            "value": 5
+          },
+          "intelligence": {
+            "label": "知力",
+            "value": 2
+          },
+          "psychic": {
+            "label": "感応",
+            "value": 1
+          }
+        }
+      }
+    }
+  },
+  "careers": {
+    "firstCareer": {
+      "label": "第一経歴",
+      "career": {
+        "key": "braveBattles",
+        "label": "ボロで勇戦",
+        "explanation": "能力-運動:4,能力-技量:6,能力-反応:4,能力-体力:4,能力-知力:3,能力-感応:5,技能-個人格闘:3,技能-体術:3",
+        "abilityValues": {
+          "motion": {
+            "label": "運動",
+            "value": 4
+          },
+          "Technique": {
+            "label": "技量",
+            "value": 6
+          },
+          "reflexes": {
+            "label": "反応",
+            "value": 4
+          },
+          "physical": {
+            "label": "体力",
+            "value": 4
+          },
+          "intelligence": {
+            "label": "知力",
+            "value": 3
+          },
+          "psychic": {
+            "label": "感応",
+            "value": 5
+          }
+        },
+        "normalSkills": {
+          "martialArts": {
+            "label": "個人格闘",
+            "value": 3
+          },
+          "avoidance": {
+            "label": "体術",
+            "value": 3
+          }
+        }
+      }
+    },
+    "secondCareer": {
+      "label": "第二経歴",
+      "career": {
+        "key": "waitedThreeYears",
+        "label": "3年待った",
+        "explanation": "能力-運動:6,能力-技量:4,能力-反応:4,能力-体力:4,能力-知力:5,能力-感応:3,技能-通信:3,技能-歩兵火器:3",
+        "abilityValues": {
+          "motion": {
+            "label": "運動",
+            "value": 6
+          },
+          "Technique": {
+            "label": "技量",
+            "value": 4
+          },
+          "reflexes": {
+            "label": "反応",
+            "value": 4
+          },
+          "physical": {
+            "label": "体力",
+            "value": 4
+          },
+          "intelligence": {
+            "label": "知力",
+            "value": 5
+          },
+          "psychic": {
+            "label": "感応",
+            "value": 3
+          }
+        },
+        "normalSkills": {
+          "telecom": {
+            "label": "通信",
+            "value": 3
+          },
+          "firearms": {
+            "label": "歩兵火器",
+            "value": 3
+          }
+        }
+      }
+    },
+    "thirdCareer": {
+      "label": "第三経歴",
+      "career": {
+        "key": "helpless",
+        "label": "孤立無援",
+        "explanation": "能力-運動:4,能力-技量:4,能力-反応:6,能力-体力:5,能力-知力:3,能力-感応:4,技能-通信:3,技能-メカニクス:3",
+        "abilityValues": {
+          "motion": {
+            "label": "運動",
+            "value": 4
+          },
+          "Technique": {
+            "label": "技量",
+            "value": 4
+          },
+          "reflexes": {
+            "label": "反応",
+            "value": 6
+          },
+          "physical": {
+            "label": "体力",
+            "value": 5
+          },
+          "intelligence": {
+            "label": "知力",
+            "value": 3
+          },
+          "psychic": {
+            "label": "感応",
+            "value": 4
+          }
+        },
+        "normalSkills": {
+          "telecom": {
+            "label": "通信",
+            "value": 3
+          },
+          "engineering": {
+            "label": "メカニクス",
+            "value": 3
+          }
+        }
+      }
+    },
+    "fourthCareer": {
+      "label": "第四経歴",
+      "career": {
+        "key": null,
+        "label": null,
+        "explanation": null,
+        "abilityValues": {},
+        "normalSkills": {}
+      }
+    },
+    "fifthCareer": {
+      "label": "第五経歴",
+      "career": {
+        "key": null,
+        "label": null,
+        "explanation": null,
+        "abilityValues": {},
+        "normalSkills": {}
+      }
+    },
+    "sixthCareer": {
+      "label": "第六経歴",
+      "career": {
+        "key": null,
+        "label": null,
+        "explanation": null,
+        "abilityValues": {},
+        "normalSkills": {}
+      }
+    }
+  },
+  "levelValues": {
+    "proficiencyLevel": {
+      "label": "熟練度",
+      "value": 3
+    },
+    "sortieLevel": {
+      "label": "出撃回数",
+      "value": 6
+    },
+    "pilotLevel": {
+      "label": "パイロットレベル",
+      "value": 3
+    }
+  },
+  "abilityValues": {
+    "motion": {
+      "label": "運動",
+      "value": null,
+      "correction": null
+    },
+    "Technique": {
+      "label": "技量",
+      "value": null,
+      "correction": null
+    },
+    "reflexes": {
+      "label": "反応",
+      "value": null,
+      "correction": null
+    },
+    "physical": {
+      "label": "体力",
+      "value": null,
+      "correction": null
+    },
+    "intelligence": {
+      "label": "知力",
+      "value": null,
+      "correction": null
+    },
+    "psychic": {
+      "label": "感応",
+      "value": null,
+      "correction": null
+    }
+  },
+  "subAbilityValues": {
+    "lifePoint": {
+      "label": "LP",
+      "value": null
+    },
+    "moralePoint": {
+      "label": "MP",
+      "value": null
+    }
+  },
+  "growthValues": {
+    "initialGrowthValues": {
+      "label": "初期加算",
+      "values": {
+        "0": {
+          "label": "自由振り分け点",
+          "explanation": "能力-技量:1,技能-MS操縦:4,PAD-大打撃!!:6",
+          "values": {
+            "abilityValues": {
+              "Technique": {
+                "label": "技量",
+                "value": 1
+              }
+            },
+            "normalSkills": {
+              "msPiloting": {
+                "label": "MS操縦",
+                "value": 4
+              }
+            },
+            "levelValues": {},
+            "personalAbilityDices": {
+              "6": {
+                "label": "6",
+                "personalAbility": {
+                  "key": "greatBlow",
+                  "label": "大打撃!!"
+                }
+              }
+            },
+            "subAbilityValues": {},
+            "specialSkills": {}
+          }
+        },
+        "1": {
+          "label": "第一経歴選択分",
+          "explanation": "技能-指揮:3,技能-MS操縦:3,特技-瞬発移動:1",
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {
+              "msPiloting": {
+                "label": "MS操縦",
+                "value": 3
+              },
+              "command": {
+                "label": "指揮",
+                "value": 3
+              }
+            },
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {
+              "msMovementExpert": {
+                "label": "瞬発移動",
+                "value": 1
+              }
+            }
+          }
+        },
+        "2": {
+          "label": "第二経歴選択分",
+          "explanation": "技能-隠蔽:3,技能-MS操縦:3,特技-MS格闘熟練:1",
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {
+              "msPiloting": {
+                "label": "MS操縦",
+                "value": 3
+              },
+              "conceal": {
+                "label": "隠蔽",
+                "value": 3
+              }
+            },
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {
+              "msMeleeExpert": {
+                "label": "MS格闘熟練",
+                "value": 1
+              }
+            }
+          }
+        },
+        "3": {
+          "label": "第三経歴選択分",
+          "explanation": "技能-通信:3,技能-MS操縦:3,特技-MS射撃熟練:1",
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {
+              "msPiloting": {
+                "label": "MS操縦",
+                "value": 3
+              },
+              "telecom": {
+                "label": "通信",
+                "value": 3
+              }
+            },
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {
+              "msShootingExpert": {
+                "label": "MS射撃熟練",
+                "value": 1
+              }
+            }
+          }
+        },
+        "4": {
+          "label": "第四経歴選択分",
+          "explanation": null,
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {},
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {}
+          }
+        },
+        "5": {
+          "label": "第五経歴選択分",
+          "explanation": null,
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {},
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {}
+          }
+        },
+        "6": {
+          "label": "第六経歴選択分",
+          "explanation": null,
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {},
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {}
+          }
+        }
+      }
+    },
+    "normalGrowthValues": {
+      "label": "通常成長",
+      "values": {
+        "0": {
+          "explanation": null,
+          "label": "1回目",
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {},
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {}
+          }
+        }
+      }
+    },
+    "newTypeGrowthValues": {
+      "label": "覚醒成長",
+      "values": {
+        "0": {
+          "explanation": null,
+          "label": "1回目",
+          "values": {
+            "abilityValues": {},
+            "normalSkills": {},
+            "levelValues": {},
+            "personalAbilityDices": {},
+            "subAbilityValues": {},
+            "specialSkills": {}
+          }
+        }
+      }
+    }
+  },
+  "normalSkills": {
+    "msPiloting": {
+      "label": "MS操縦",
+      "value": null,
+      "upperLimit": null
+    }
+  },
+  "specialSkills": {
+    "msMeleeExpert": {
+      "label": "MS格闘熟練",
+      "type": {
+        "key": "specialSkills",
+        "label": "特技"
+      },
+      "effects": {
+        "always": {
+          "label": "常働効果",
+          "effect": {
+            "label": "MS白兵武器熟練",
+            "explanation": "本人のパイロットレベル+1"
+          }
+        },
+        "normal": {
+          "label": "MP1効果",
+          "effect": {
+            "label": "移動後牽制",
+            "explanation": "射程0で使用可能な武装を用いて追加移動あるいは追加加速後にスタックした目標と次の自分の行動までの間、格闘ロック状態にする。"
+          }
+        },
+        "maximum": {
+          "label": "MP効果",
+          "effect": {
+            "label": "切り払い",
+            "explanation": "I属性武器による命中時、防御判定に代わりに行い、格闘勝負《運動:MS操縦:対決》で目標が勝利しない限り、攻撃を無効化する。命中判定は一次成功でも完全成功でも関係しない(I属性武器を装備している事)。"
+          }
+        }
+      },
+      "correction": {
+        "label": "数値修正",
+          "levelValues": {
+            "pilotLevel": {
+              "value":1
+            }
+        }
+      }
+    }
+  },
+  "personalAbilityDices": {
+    "1": {
+      "label": "1",
+      "personalAbility": {
+        "key": null,
+        "label": null,
+        "explanation": null
+      }
+    },
+    "2": {
+      "label": "2",
+      "personalAbility": {
+        "key": null,
+        "label": null,
+        "explanation": null
+      }
+    },
+    "3": {
+      "label": "3",
+      "personalAbility": {
+        "key": null,
+        "label": null,
+        "explanation": null
+      }
+    },
+    "4": {
+      "label": "4",
+      "personalAbility": {
+        "key": null,
+        "label": null,
+        "explanation": null
+      }
+    },
+    "5": {
+      "label": "5",
+      "personalAbility": {
+        "key": null,
+        "label": null,
+        "explanation": null
+      }
+    },
+    "6": {
+      "label": "6",
+      "personalAbility": {
+        "key": "greatBlow",
+        "label": "大打撃!!",
+        "explanation": "兵器命中時の損害点+1D6"
+      }
+    }
+  }
+}

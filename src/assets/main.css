@@ -1,4 +1,6 @@
-@import './base.css';
+/**
+  *@import './base.css';
+  */
 
 #app {
   max-width: 1280px;
@@ -7,6 +9,32 @@
 
   font-weight: normal;
 }
+
+.table-header {
+  background: #1976d2;
+  color:#ffffff;
+  text-align:center;
+}
+
+.table-body {
+  background: #a1dcfc;
+  color:#000;
+  text-align:start;
+  border: 1px solid #929292
+}
+
+.first-col{
+  background: #26a69a;
+  color:#ffffff;
+  text-align:center;
+}
+
+.crilable-col{
+  background: #a9c626;
+  color:#000;
+  text-align:center;
+}
+
 
 a,
 .green {

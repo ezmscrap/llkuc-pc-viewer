@@ -1,0 +1,921 @@
+{
+  "proficiencyLevel": {
+    "label": "熟練度",
+    "type": {
+      "key": "levelValues",
+      "label": "レベル値"
+    }
+  },
+  "sortieLevel": {
+    "label": "出撃回数",
+    "type": {
+      "key": "levelValues",
+      "label": "レベル値"
+    }
+  },
+  "pilotLevel": {
+    "label": "パイロットレベル",
+    "type": {
+      "key": "levelValues",
+      "label": "レベル値"
+    }
+  },
+  "name": {
+    "label": "氏名",
+    "type": {
+      "key": "personalData",
+      "label": "個人情報"
+    }
+  },
+  "sex": {
+    "label": "性別",
+    "type": {
+      "key": "personalData",
+      "label": "個人情報"
+    }
+  },
+  "height": {
+    "label": "身長",
+    "type": {
+      "key": "personalData",
+      "label": "個人情報"
+    }
+  },
+  "weight": {
+    "label": "体重",
+    "type": {
+      "key": "personalData",
+      "label": "個人情報"
+    }
+  },
+  "dateOfBirth": {
+    "label": "生年月日",
+    "type": {
+      "key": "personalData",
+      "label": "個人情報"
+    }
+  },
+  "firstGuideline": {
+    "label": "第一指針",
+    "type": {
+      "key": "guideline",
+      "label": "指針"
+    }
+  },
+  "secondGuideline": {
+    "label": "第二指針",
+    "type": {
+      "key": "guideline",
+      "label": "指針"
+    }
+  },
+  "firstCareer": {
+    "label": "第一経歴",
+    "type": {
+      "key": "career",
+      "label": "経歴"
+    }
+  },
+  "secondCareer": {
+    "label": "第二経歴",
+    "type": {
+      "key": "career",
+      "label": "経歴"
+    }
+  },
+  "thirdCareer": {
+    "label": "第三経歴",
+    "type": {
+      "key": "career",
+      "label": "経歴"
+    }
+  },
+  "fourthCareer": {
+    "label": "第四経歴",
+    "type": {
+      "key": "career",
+      "label": "経歴"
+    }
+  },
+  "fifthCareer": {
+    "label": "第五経歴",
+    "type": {
+      "key": "career",
+      "label": "経歴"
+    }
+  },
+  "sixthCareer": {
+    "label": "第六経歴",
+    "type": {
+      "key": "career",
+      "label": "経歴"
+    }
+  },
+  "motion": {
+    "label": "運動",
+    "type": {
+      "key": "abilityValues",
+      "label": "能力"
+    }
+  },
+  "Technique": {
+    "label": "技量",
+    "type": {
+      "key": "abilityValues",
+      "label": "能力"
+    }
+  },
+  "reflexes": {
+    "label": "反応",
+    "type": {
+      "key": "abilityValues",
+      "label": "能力"
+    }
+  },
+  "physical": {
+    "label": "体力",
+    "type": {
+      "key": "abilityValues",
+      "label": "能力"
+    }
+  },
+  "intelligence": {
+    "label": "知力",
+    "type": {
+      "key": "abilityValues",
+      "label": "能力"
+    }
+  },
+  "psychic": {
+    "label": "感応",
+    "type": {
+      "key": "abilityValues",
+      "label": "能力"
+    }
+  },
+  "LifePoint": {
+    "label": "LP",
+    "type": {
+      "key": "subAbilityValues",
+      "label": "副能力"
+    }
+  },
+  "moralePoint": {
+    "label": "MP",
+    "type": {
+      "key": "subAbilityValues",
+      "label": "副能力"
+    }
+  },
+  "driving": {
+    "label": "車両操縦",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "shipHandling": {
+    "label": "艦艇操縦",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "airplaneControl": {
+    "label": "航空機操縦",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "msPiloting": {
+    "label": "MS操縦",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "telecom": {
+    "label": "通信",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "firearms": {
+    "label": "歩兵火器",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "martialArts": {
+    "label": "個人格闘",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "avoidance": {
+    "label": "体術",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "software": {
+    "label": "ソフトウェア",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "engineering": {
+    "label": "メカニクス",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "tactics": {
+    "label": "戦術",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "insider": {
+    "label": "情報通",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "conceal": {
+    "label": "隠蔽",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "Knowledgeable": {
+    "label": "博識",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "medicine": {
+    "label": "医術",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "command": {
+    "label": "指揮",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "initialGrowthValues": {
+    "label": "初期加算",
+    "type": {
+      "key": "growthValues",
+      "label": "成長種別"
+    }
+  },
+  "normalGrowthValues": {
+    "label": "通常成長",
+    "type": {
+      "key": "growthValues",
+      "label": "成長種別"
+    }
+  },
+  "newTypeGrowthValues": {
+    "label": "覚醒成長",
+    "type": {
+      "key": "growthValues",
+      "label": "成長種別"
+    }
+  },
+  "msMovementExpert": {
+    "label": "瞬発移動",
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "移動熟練",
+          "explanation": "出撃時、機体の燃料+1"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "挺身防御",
+          "explanation": "味方への損害判定後にスタック中の味方の受ける損害を引き受ける。この時に瞬発移動の宣言が可能(ＭＰ消費)。通常の瞬発移動とことなり、通常移動、加速移動に加え、通常移動＋追加移動、加速移動＋追加加速で移動することが可能。もちろん、燃料やHPへの減点は通常通り。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "瞬発移動",
+          "explanation": "燃料消費して「移動」前あるいは「行動」後に通常移動あるいは加速移動分だけ移動(HP-1D6ただし、耐Gがあるならば0点・追加移動あるいは追加加速は出来ない)。超加速属性扱い。"
+        }
+      }
+    },
+    "correction": {
+      "label": "数値修正"
+    },
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    }
+  },
+  "msShootingExpert": {
+    "label": "MS射撃熟練",
+    "correction": {
+      "label": "数値修正",
+      "levelValues": {
+        "pilotLevel": {
+          "value":1
+        }
+      }
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "MS射撃武器熟練",
+          "explanation": "本人のパイロットレベル+1"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "曲撃ち",
+          "explanation": "「打ち上げ射撃」「打ち下し射撃」「射界割れ射撃」のペナルティが無くなる。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "狙撃",
+          "explanation": "通常移動フェイズに移動しない場合のみ使用可能。I属性以外で最大射程2以上の武器の攻撃が射程×1.5(切捨て)で大打撃になる(損害判定時「1・2→4」で目標は防御判定の目標値+1)。ただし、移動後に「狙撃」した場合、次の自分の行動までPADを除く自律移動、自律防御が不可能。移動せずに「狙撃」した場合、この制限は発生しない。"
+        }
+      }
+    },
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    }
+  },
+  "antiShipCombatExpert": {
+    "label": "対艦戦熟練",
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    },
+    "correction": {
+      "label": "数値修正"
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "対艦攻撃",
+          "explanation": "命中判定の目標値-2かつ損害判定時の損害点+1D6。さらに機体の索敵範囲+1。"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "対艦防御",
+          "explanation": "艦船からの攻撃に対する回避判定目標値-2(回避判定前に宣言。シールドは不可)。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "精密爆破",
+          "explanation": "艦船への損害表を余分に2回振り、任意の効果を選択可能(損害表判定前に宣言)。"
+        }
+      }
+    }
+  },
+  "gResistance": {
+    "label": "耐G",
+    "correction": {
+      "label": "数値修正",
+      "subAbilityValues": {
+        "lifePoint": {
+          "label": "LP",
+          "value": 4
+        }
+      }
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "耐G",
+          "explanation": "超加速属性によるHP損害を無視する。さらにLP+4。"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "頑強",
+          "explanation": "LPへの損害決定時の修正を[3・4・5・6→2]にする。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "強靭体力",
+          "explanation": "体力に基づく判定の目標値-2(目標値が6以下ならば自動成功)。"
+        }
+      }
+    },
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    }
+  },
+  "predictShot": {
+    "label": "先読み",
+    "correction": {
+      "label": "数値修正",
+      "subAbilityValues": {
+        "subAbilityValues": {
+          "moralePoint": {
+            "label": "LP",
+            "value": 4
+          }
+        }
+      }
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "平常精神",
+          "explanation": "MPへの損害決定時の修正を[3・4・5・6→2]に。さらにMP+4。"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "戦術熟練",
+          "explanation": "《*:戦術:*》の目標値-2(目標値が6以下ならば自動成功)。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "先読み攻撃",
+          "explanation": "I属性なし武器の命中判定を知力修正で行う(目標は回避判定に反応修正を使用できずかつ判定目標値+2)。"
+        }
+      }
+    },
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    }
+  },
+  "trickWork": {
+    "label": "高速準備",
+    "correction": {
+      "label": "数値修正"
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "高速動作熟練",
+          "explanation": "高速動作《技量:MS操縦:*》の目標値-2(目標値が6以下ならば自動成功)。さらに機体の燃料+1。"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "高速回収",
+          "explanation": "そのヘクスに投棄された任意の兵装を全て回収し、本体が持つ兵装に出来る。回収した兵装は望むならば、手の数に応じた数の兵装まで「準備状態」にできる。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "緊急装備展開",
+          "explanation": "行動権を消費せずに、「格納状態」の兵装を「非準備状態」にする(片手は空である事)。"
+        }
+      }
+    },
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    }
+  },
+  "stuckShot": {
+    "label": "機会射撃",
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "警戒熟練",
+          "explanation": "隠蔽を使用した判定の目標値-2(目標値が6以下ならば自動成功)。さらに機体の索敵精度+1"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "足止め射撃",
+          "explanation": "現在装備中の武装で攻撃可能である位置で行動を終了した目標の追加移動フェイズに宣言し、追加移動フェイズでの行動を無くす。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "機会射撃",
+          "explanation": "現在装備中の最大射程1以上のI属性なし武装で攻撃可能である位置で通常移動フェイズを開始した目標に対して宣言し、その通常移動フェイズでの行動を無くす。"
+        }
+      }
+    },
+    "correction": {
+      "label": "数値修正"
+    }
+  },
+  "msMeleeExpert": {
+    "label": "MS格闘熟練",
+    "type": {
+      "key": "specialSkills",
+      "label": "特技"
+    },
+    "effects": {
+      "always": {
+        "label": "常働効果",
+        "effect": {
+          "label": "MS白兵武器熟練",
+          "explanation": "本人のパイロットレベル+1"
+        }
+      },
+      "normal": {
+        "label": "MP1効果",
+        "effect": {
+          "label": "移動後牽制",
+          "explanation": "射程0で使用可能な武装を用いて追加移動あるいは追加加速後にスタックした目標と次の自分の行動までの間、格闘ロック状態にする。"
+        }
+      },
+      "maximum": {
+        "label": "MP効果",
+        "effect": {
+          "label": "切り払い",
+          "explanation": "I属性武器による命中時、防御判定に代わりに行い、格闘勝負《運動:MS操縦:対決》で目標が勝利しない限り、攻撃を無効化する。命中判定は一次成功でも完全成功でも関係しない(I属性武器を装備している事)。"
+        }
+      }
+    },
+    "correction": {
+      "label": "数値修正",
+        "levelValues": {
+          "pilotLevel": {
+            "value":1
+          }
+      }
+    }
+  },
+  "DoubleDamageFromFighting": {
+    "label": "倍撃格闘!!",
+    "explanation": "I属性なし兵器命中時の損害点×2",
+    "class": "一撃系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "DoubleDamageFromShooting": {
+    "label": "射撃格闘!!",
+    "explanation": "I属性兵器命中時の損害点×2",
+    "class": "一撃系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "greatBlow": {
+    "label": "大打撃!!",
+    "explanation": "兵器命中時の損害点+1D6",
+    "class": "一撃系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "additionalShots": {
+    "label": "追加射撃!!",
+    "explanation": "攻撃終了後、同目標をI属性なし兵器で攻撃可能",
+    "class": "連撃系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "counterattack": {
+    "label": "超反応!!",
+    "explanation": "自分を目標にした敵の攻撃の前に攻撃可能",
+    "class": "連撃系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "rush": {
+    "label": "殺到!!",
+    "explanation": "1回の追加移動後、最大射程0兵器で別目標を攻撃可能",
+    "class": "連撃系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "determine": {
+    "label": "見切り!!",
+    "explanation": "回避判定を1回自動的に完全成功",
+    "class": "回避系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "acrobat": {
+    "label": "回避機動!!",
+    "explanation": "防御判定の目標値を-2",
+    "class": "回避系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "reactiveStance": {
+    "label": "受け身!!",
+    "explanation": "自分が受けた損害点を2D6減少(ゾロ目でC無効)",
+    "class": "回避系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "support": {
+    "label": "援護!!",
+    "explanation": "索敵範囲内の味方の判定目標値を-1",
+    "class": "支援系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "obstruction": {
+    "label": "妨害!!",
+    "explanation": "索敵範囲内の敵の判定目標値を+1",
+    "class": "支援系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "reinforcement": {
+    "label": "鼓舞!!",
+    "explanation": "索敵範囲内の味方の損害点を+4",
+    "class": "支援系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "stay": {
+    "label": "移動阻止!!",
+    "explanation": "目標の次回の移動を不可能にする(命中の必要なし)",
+    "class": "威圧系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "noAttacking": {
+    "label": "攻撃阻止!!",
+    "explanation": "目標の次回の攻撃を不可能にする(命中の必要なし)",
+    "class": "威圧系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "freeze": {
+    "label": "回避阻止!!",
+    "explanation": "この攻撃に対する目標のあらゆる防御を不可能にする",
+    "class": "威圧系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "disarmament": {
+    "label": "兵装誘爆!!",
+    "explanation": "ランダムで二つの武装を破壊する(命中時のみ)。",
+    "class": "特殊攻撃系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "fatalShot": {
+    "label": "致命弾!!",
+    "explanation": "I機体損害表判定を3回、任意効果を1つ適用(命中時のみ)。",
+    "class": "特殊攻撃系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "armorBreak": {
+    "label": "装甲破砕!!",
+    "explanation": "装甲を1D6+1減少(命中時のみ)。",
+    "class": "特殊攻撃系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "painfulBlow": {
+    "label": "痛打!!",
+    "explanation": "自動命中(防御判定の目標値+1)。",
+    "class": "精度系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "precisionShooting": {
+    "label": "精密射撃!!",
+    "explanation": "I属性なし兵器の命中判定に追加+1d6。",
+    "class": "精度系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "aimSlash": {
+    "label": "狙い切り!!",
+    "explanation": "I属性兵器の命中判定に追加+1d6。",
+    "class": "精度系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "throwAllIntoATask": {
+    "label": "乾坤一擲!!",
+    "explanation": "自分のMPが1D6+4上昇。",
+    "class": "モラル系ボーナスPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "pressure": {
+    "label": "圧倒!!",
+    "explanation": "目標のMPが1D6+1低下、その半分 (切捨て)自分のMP上昇",
+    "class": "モラル系ボーナスPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "encouragement": {
+    "label": "激励!!",
+    "explanation": "I属性兵器の命中判定に追加+1d6。",
+    "class": "モラル系ボーナスPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "friendlyFire": {
+    "label": "誤射!!",
+    "explanation": "味方に自動命中(通常命中扱い)。回避、防御は可能。",
+    "class": "軽率系ペナルティPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "misoperation": {
+    "label": "誤操作!!",
+    "explanation": "全判定目標値+2",
+    "class": "軽率系ペナルティPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "jumpOut": {
+    "label": "突出!!",
+    "explanation": "ただちの敵の攻撃が自分に命中。回避、防御はできない。",
+    "class": "軽率系ペナルティPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "purge": {
+    "label": "兵装剥離!!",
+    "explanation": "ランダムに兵器を二つ落とす(対象となる武器がない場合は1武器あたり1D6点の損害を受ける)",
+    "class": "故障系ペナルティPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "breakdown": {
+    "label": "武器故障!!",
+    "explanation": "武装が故障し使用不能になる",
+    "class": "故障系ペナルティPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "circuitFailure": {
+    "label": "回路不全!!",
+    "explanation": "回避と移動不能(シールド防御は可能)",
+    "class": "故障系ペナルティPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "miss": {
+    "label": "攻撃失敗!!",
+    "explanation": "命中判定は自動失敗し、さらに1D6点の損害を受ける",
+    "class": "下手系ペナルティPAD",
+    "roll": [1, 2],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "selfExplosion": {
+    "label": "自爆!!",
+    "explanation": "2D6点の損害を受ける(機体損害表判定は発生しない)",
+    "class": "下手系ペナルティPAD",
+    "roll": [3, 4],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  },
+  "lostHeart": {
+    "label": "意気消沈!!",
+    "explanation": "本戦闘において今後一切のボーナスPADは効果消失(ペナルティPADは通常通りに効果)",
+    "class": "下手系ペナルティPAD",
+    "roll": [5, 6],
+    "type": {
+      "key": "personalAbilityDices",
+      "label": "PAD"
+    }
+  }
+}
