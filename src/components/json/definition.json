@@ -272,6 +272,20 @@
       "label": "技能"
     }
   },
+  "art": {
+    "label": "芸術",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
+  "spacePlaneControl": {
+    "label": "航宙機操縦",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
   "command": {
     "label": "指揮",
     "type": {
