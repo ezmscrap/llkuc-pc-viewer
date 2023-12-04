@@ -286,6 +286,13 @@
       "label": "技能"
     }
   },
+  "bombarding": {
+    "label": "砲撃",
+    "type": {
+      "key": "normalSkills",
+      "label": "技能"
+    }
+  },
   "command": {
     "label": "指揮",
     "type": {
