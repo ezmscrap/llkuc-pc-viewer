@@ -357,16 +357,12 @@
         },
         "1": {
           "label": "第一経歴選択分",
-          "explanation": "技能-指揮:3,技能-MS操縦:3,特技-瞬発移動:1",
+          "explanation": "技能-MS操縦:3,特技-瞬発移動:1",
           "values": {
             "abilityValues": {},
             "normalSkills": {
               "msPiloting": {
                 "label": "MS操縦",
-                "value": 3
-              },
-              "command": {
-                "label": "指揮",
                 "value": 3
               }
             },
@@ -383,16 +379,12 @@
         },
         "2": {
           "label": "第二経歴選択分",
-          "explanation": "技能-隠蔽:3,技能-MS操縦:3,特技-MS格闘熟練:1",
+          "explanation": "技能-MS操縦:3,特技-MS格闘熟練:1",
           "values": {
             "abilityValues": {},
             "normalSkills": {
               "msPiloting": {
                 "label": "MS操縦",
-                "value": 3
-              },
-              "conceal": {
-                "label": "隠蔽",
                 "value": 3
               }
             },
@@ -409,16 +401,12 @@
         },
         "3": {
           "label": "第三経歴選択分",
-          "explanation": "技能-通信:3,技能-MS操縦:3,特技-MS射撃熟練:1",
+          "explanation": "技能-MS操縦:3,特技-MS射撃熟練:1",
           "values": {
             "abilityValues": {},
             "normalSkills": {
               "msPiloting": {
                 "label": "MS操縦",
-                "value": 3
-              },
-              "telecom": {
-                "label": "通信",
                 "value": 3
               }
             },
@@ -545,10 +533,10 @@
       },
       "correction": {
         "label": "数値修正",
-          "levelValues": {
-            "pilotLevel": {
-              "value":1
-            }
+        "levelValues": {
+          "pilotLevel": {
+            "value": 1
+          }
         }
       }
     }
@@ -601,6 +589,20 @@
         "label": "大打撃!!",
         "explanation": "兵器命中時の損害点+1D6"
       }
+    }
+  },
+  "note": {
+    "characterBackgroundText": {
+      "label": "PC設定",
+      "value": null
+    },
+    "tag": {
+      "label": "タグ",
+      "value": null
+    },
+    "creationComment": {
+      "label": "作成者メモ",
+      "value": null
     }
   }
 }
