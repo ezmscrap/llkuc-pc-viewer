@@ -80,6 +80,29 @@ export const openPersonalDataDialog = async function (key, $q) {
   return await retrunSelectData()
 }
 
+export const openNoteDialog = async function (key, $q) {
+  const selectOnDialog = async function (key, $q) {
+    return new Promise(function (resolve) {
+      $q.dialog({
+        title: 'データの入力',
+        message: definition[key].label + 'の値を入力してください',
+        prompt: {
+          model: '',
+          type: 'text'
+        },
+        cancel: true,
+        persistent: true
+      }).onOk(function (data) {
+        resolve(data)
+      })
+    })
+  }
+  const retrunSelectData = async function () {
+    return await selectOnDialog(key, $q)
+  }
+  return await retrunSelectData()
+}
+
 export const openGrowthValueDialog = async function ($q, explanationText, growthValueKey) {
   const selectOnDialog = async function ($q, explanationText, growthValueKey) {
     return new Promise(function (resolve) {
