@@ -12,61 +12,59 @@ import definition from './json/definition.json'
 import careers from './json/careers.json'
 import guidelines from './json/guidlines.json'
 
-function getRows(items){
+function getRows(items) {
     const keys = Object.keys(items)
     const columns = []
-    for(let index=0;index<keys.length;index++){
+    for (let index = 0; index < keys.length; index++) {
         const key = keys[index]
         const item = items[key]
-        const newItem={
-            name:item.label
+        const newItem = {
+            name: item.label
         }
         const abilityValueKeys = Object.keys(item.abilityValues)
-        for(let abilityValueIndex=0;abilityValueIndex<abilityValueKeys.length;abilityValueIndex++){
+        for (let abilityValueIndex = 0; abilityValueIndex < abilityValueKeys.length; abilityValueIndex++) {
             const abilityValueKey = abilityValueKeys[abilityValueIndex]
-            newItem[abilityValueKey]=item.abilityValues[abilityValueKey].value
+            newItem[abilityValueKey] = item.abilityValues[abilityValueKey].value
         }
-        if(item.normalSkills){
+        if (item.normalSkills) {
             const normalSkillKeys = Object.keys(item.normalSkills)
-            const normalSkillLabel=['skill-1','skill-2']
-            for(let normalSkillIndex=0;normalSkillIndex<normalSkillKeys.length;normalSkillIndex++){
+            const normalSkillLabel = ['skill-1', 'skill-2']
+            for (let normalSkillIndex = 0; normalSkillIndex < normalSkillKeys.length; normalSkillIndex++) {
                 const normalSkillKey = normalSkillKeys[normalSkillIndex]
-                newItem[normalSkillLabel[normalSkillIndex]]=item.normalSkills[normalSkillKey].label
+                newItem[normalSkillLabel[normalSkillIndex]] = item.normalSkills[normalSkillKey].label
             }
         }
-        if(item.commandSkill){
-            newItem['commandSkillLabel']=item.commandSkill.label
-            newItem['commandSkillExplanation']=item.commandSkill.explanation
+        if (item.commandSkill) {
+            newItem['commandSkillLabel'] = item.commandSkill.label
+            newItem['commandSkillExplanation'] = item.commandSkill.explanation
         }
         columns.push(newItem)
     }
     return columns
 }
 
-const careerColumns=ref([
-    {name: 'name',label:'経歴名',field: 'name'},
-    {name: 'motion',label:'運動',sortable: true,field: 'motion'},
-    {name: 'Technique',label:'技量',sortable: true,field: 'Technique'},
-    {name: 'reflexes',label:'反応',sortable: true,field: 'reflexes'},
-    {name: 'physical',label:'体力',sortable: true,field: 'physical'},
-    {name: 'intelligence',label:'知力',sortable: true,field: 'intelligence'},
-    {name: 'psychic',label:'感応',sortable: true,field: 'psychic'},
-    {name: 'skill-1',label:'技能-1',sortable: true,field: 'skill-1'},
-    {name: 'skill-2',label:'技能-2',sortable: true,field: 'skill-2'},
-    {name: 'commandSkillLabel',label:'指揮特技',sortable: true,field: 'commandSkillLabel'},
-    {name: 'commandSkillExplanation',label:'説明',sortable: true,field: 'commandSkillLabel'},
+const careerColumns = ref([
+    { name: 'name', label: '経歴名', field: 'name' },
+    { name: 'motion', label: '運動', sortable: true, field: 'motion' },
+    { name: 'Technique', label: '技量', sortable: true, field: 'Technique' },
+    { name: 'reflexes', label: '反応', sortable: true, field: 'reflexes' },
+    { name: 'physical', label: '体力', sortable: true, field: 'physical' },
+    { name: 'intelligence', label: '知力', sortable: true, field: 'intelligence' },
+    { name: 'psychic', label: '感応', sortable: true, field: 'psychic' },
+    { name: 'skill-1', label: '技能-1', sortable: true, field: 'skill-1' },
+    { name: 'skill-2', label: '技能-2', sortable: true, field: 'skill-2' }
 ])
 
-const guidelineColumns=ref([
-    {name: 'name',label:'経歴名',field: 'name'},
-    {name: 'motion',label:'運動',sortable: true,field: 'motion'},
-    {name: 'Technique',label:'技量',sortable: true,field: 'Technique'},
-    {name: 'reflexes',label:'反応',sortable: true,field: 'reflexes'},
-    {name: 'physical',label:'体力',sortable: true,field: 'physical'},
-    {name: 'intelligence',label:'知力',sortable: true,field: 'intelligence'},
-    {name: 'psychic',label:'感応',sortable: true,field: 'psychic'},
-    {name: 'commandSkillLabel',label:'指揮特技',sortable: true,field: 'commandSkillLabel'},
-    {name: 'commandSkillExplanation',label:'説明',sortable: true,field: 'commandSkillLabel'},
+const guidelineColumns = ref([
+    { name: 'name', label: '経歴名', field: 'name' },
+    { name: 'motion', label: '運動', sortable: true, field: 'motion' },
+    { name: 'Technique', label: '技量', sortable: true, field: 'Technique' },
+    { name: 'reflexes', label: '反応', sortable: true, field: 'reflexes' },
+    { name: 'physical', label: '体力', sortable: true, field: 'physical' },
+    { name: 'intelligence', label: '知力', sortable: true, field: 'intelligence' },
+    { name: 'psychic', label: '感応', sortable: true, field: 'psychic' },
+    { name: 'commandSkillLabel', label: '指揮特技', sortable: true, field: 'commandSkillLabel' },
+    { name: 'commandSkillExplanation', label: '説明', sortable: true, field: 'commandSkillExplanation' }
 ])
 
 const careerRows = ref(getRows(careers))
@@ -74,7 +72,7 @@ const firstGuidelineRow = ref(getRows(guidelines.firstGuideline))
 const secondGuidelineRow = ref(getRows(guidelines.secondGuideline))
 
 const pcData = ref(pcJson)
-const tab =ref('create')
+const tab = ref('create')
 
 const growthItemValues = ref({
     explanation: '',
@@ -175,8 +173,7 @@ function initTextByButton() {
         <q-btn class="bg-cyan-2 text-indigo-14" label="情報出力" v-on:click="getDataByButton" />
         <q-btn class="bg-cyan-2 text-indigo-14" label="情報入力" v-on:click="putDataByButton" />
     </q-toolbar>
-    <q-tabs v-model="tab"
-        class="text-teal">
+    <q-tabs v-model="tab" class="text-teal">
         <q-tab name="create" label="キャラクタ作成" />
         <q-tab name="firstGuidelineList" label="第一指針リスト" />
         <q-tab name="secondGuidelineList" label="第二指針リスト" />
@@ -186,63 +183,100 @@ function initTextByButton() {
         <q-tab-panel name="create">
             <div class="q-pa-md">
                 <div class="row">
-                    <div class="col">
-                        <div class="row table-header">
-                            <div class="col">項目名</div>
-                            <div class="col">値</div>
+                    <div class="col col-9">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row table-header">
+                                    <div class="col">項目名</div>
+                                    <div class="col">値</div>
+                                </div>
+                                <div class="row table-body" v-for="(item, index) in pcData.personalData"
+                                    v-bind:key="item.label">
+                                    <div class="col first-col">{{ item.label }}</div>
+                                    <div class="col crilable-col" v-on:dblclick="setPersonalData(index)">{{ item.value }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row table-header">
+                                    <div class="col">レベル名</div>
+                                    <div class="col">数値</div>
+                                </div>
+                                <div class="row table-body" v-for="item in pcData.levelValues" v-bind:key="item.label">
+                                    <div class="col first-col">{{ item.label }}</div>
+                                    <div class="col text-center">{{ item.value }}</div>
+                                </div>
+                                <div class="row table-header">
+                                    <div class="col">指針</div>
+                                    <div class="col">名前</div>
+                                    <div class="col">指揮特技</div>
+                                </div>
+                                <div class="row table-body" v-for="item in pcData.guidelines" v-bind:key="item.label">
+                                    <div class="col first-col">{{ item.label }}</div>
+                                    <div class="col text-center">{{ item.guideline.label }}</div>
+                                    <div v-if="item.guideline.commandSkill" class="col text-center">
+                                        {{ item.guideline.commandSkill.label }}
+                                        <q-tooltip anchor="center right" self="center left">
+                                            {{ item.guideline.commandSkill.explanation }}
+                                        </q-tooltip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row table-header">
+                                    <div class="col">PAD</div>
+                                    <div class="col">名前</div>
+                                    <div class="col">効果</div>
+                                </div>
+                                <div class="row table-body" v-for="item in pcData.personalAbilityDices"
+                                    v-bind:key="item.label">
+                                    <div class="col first-col">{{ item.label }}</div>
+                                    <div class="col">{{ item.personalAbility.label }}</div>
+                                    <div class="col">{{ item.personalAbility.explanation }}</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row table-body" v-for="(item, index) in pcData.personalData" v-bind:key="item.label">
-                            <div class="col first-col">{{ item.label }}</div>
-                            <div class="col crilable-col" v-on:dblclick="setPersonalData(index)">{{ item.value }}</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row table-header">
-                            <div class="col">レベル名</div>
-                            <div class="col">数値</div>
-                        </div>
-                        <div class="row table-body" v-for="item in pcData.levelValues" v-bind:key="item.label">
-                            <div class="col first-col">{{ item.label }}</div>
-                            <div class="col text-center">{{ item.value }}</div>
-                        </div>
-                        <div class="row table-header">
-                            <div class="col">指針</div>
-                            <div class="col">名前</div>
-                            <div class="col">指揮特技</div>
-                        </div>
-                        <div class="row table-body" v-for="item in pcData.guidelines" v-bind:key="item.label">
-                            <div class="col first-col">{{ item.label }}</div>
-                            <div class="col text-center">{{ item.guideline.label }}</div>
-                            <div v-if="item.guideline.commandSkill" class="col text-center">
-                                {{ item.guideline.commandSkill.label }}
-                                <q-tooltip anchor="center right" self="center left">
-                                    {{ item.guideline.commandSkill.explanation }}
-                                </q-tooltip>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row table-header">
+                                    <div class="col">能力名</div>
+                                    <div class="col">能力練度</div>
+                                    <div class="col">変換値</div>
+                                </div>
+                                <div class="row table-body" v-for="item in pcData.abilityValues" v-bind:key="item.label">
+                                    <div class="col text-center first-col">{{ item.label }}</div>
+                                    <div class="col text-center">{{ item.value }}</div>
+                                    <div class="col text-center">{{ item.correction }}</div>
+                                </div>
+                                <div class="row table-header">
+                                    <div class="col">副能力名</div>
+                                    <div class="col">数値</div>
+                                </div>
+                                <div class="row table-body" v-for="item in pcData.subAbilityValues" v-bind:key="item.label">
+                                    <div class="col text-center first-col">{{ item.label }}</div>
+                                    <div class="col text-center">{{ item.value }}</div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="row table-header">
+                                    <div class="col">特技名</div>
+                                    <div class="col">効果</div>
+                                </div>
+                                <div class="row table-body" v-for="item in pcData.specialSkills" v-bind:key="item.label">
+                                    <div class="col first-col">{{ item.label }}</div>
+                                    <div class="col flex-break">
+                                        <div v-for="subitem in item.effects" v-bind:key="subitem.label">
+                                            {{ subitem.label }} : {{ subitem.effect.label }}
+                                            <q-tooltip anchor="center right" self="center left">
+                                                {{ subitem.effect.explanation }}
+                                            </q-tooltip>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="row table-header">
-                            <div class="col">能力名</div>
-                            <div class="col">能力練度</div>
-                            <div class="col">変換値</div>
-                        </div>
-                        <div class="row table-body" v-for="item in pcData.abilityValues" v-bind:key="item.label">
-                            <div class="col text-center first-col">{{ item.label }}</div>
-                            <div class="col text-center">{{ item.value }}</div>
-                            <div class="col text-center">{{ item.correction }}</div>
-                        </div>
-                        <div class="row table-header">
-                            <div class="col">副能力名</div>
-                            <div class="col">数値</div>
-                        </div>
-                        <div class="row table-body" v-for="item in pcData.subAbilityValues" v-bind:key="item.label">
-                            <div class="col text-center first-col">{{ item.label }}</div>
-                            <div class="col text-center">{{ item.value }}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col">
                         <div class="row table-header">
                             <div class="col">技能名</div>
@@ -253,35 +287,6 @@ function initTextByButton() {
                             <div class="col text-center first-col">{{ item.label }}</div>
                             <div class="col text-center">{{ item.value }}</div>
                             <div class="col text-center">{{ item.upperLimit }}</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row table-header">
-                            <div class="col">特技名</div>
-                            <div class="col">効果</div>
-                        </div>
-                        <div class="row table-body" v-for="item in pcData.specialSkills" v-bind:key="item.label">
-                            <div class="col first-col">{{ item.label }}</div>
-                            <div class="col flex-break">
-                                <div v-for="subitem in item.effects" v-bind:key="subitem.label">
-                                    {{ subitem.label }} : {{ subitem.effect.label }}
-                                    <q-tooltip anchor="center right" self="center left">
-                                        {{ subitem.effect.explanation }}
-                                    </q-tooltip>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row table-header">
-                            <div class="col">PAD</div>
-                            <div class="col">名前</div>
-                            <div class="col">効果</div>
-                        </div>
-                        <div class="row table-body" v-for="item in pcData.personalAbilityDices" v-bind:key="item.label">
-                            <div class="col first-col">{{ item.label }}</div>
-                            <div class="col">{{ item.personalAbility.label }}</div>
-                            <div class="col">{{ item.personalAbility.explanation }}</div>
                         </div>
                     </div>
                 </div>
@@ -359,30 +364,15 @@ function initTextByButton() {
             </div>
         </q-tab-panel>
         <q-tab-panel name="firstGuidelineList">
-            <q-table
-                title="第一指針リスト"
-                :rows="firstGuidelineRow"
-                :columns="guidelineColumns"
-                row-key="name"
-                >
+            <q-table title="第一指針リスト" :rows="firstGuidelineRow" :columns="guidelineColumns" row-key="name">
             </q-table>
         </q-tab-panel>
         <q-tab-panel name="secondGuidelineList">
-            <q-table
-                title="第二指針リスト"
-                :rows="secondGuidelineRow"
-                :columns="guidelineColumns"
-                row-key="name"
-                >
+            <q-table title="第二指針リスト" :rows="secondGuidelineRow" :columns="guidelineColumns" row-key="name">
             </q-table>
         </q-tab-panel>
         <q-tab-panel name="careerList">
-            <q-table
-                title="経歴リスト"
-                :rows="careerRows"
-                :columns="careerColumns"
-                row-key="name"
-                >
+            <q-table title="経歴リスト" :rows="careerRows" :columns="careerColumns" row-key="name">
             </q-table>
         </q-tab-panel>
     </q-tab-panels>
