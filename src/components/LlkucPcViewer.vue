@@ -2,7 +2,9 @@
 import { ref } from "vue"
 import { useClipboard } from '@vueuse/core'
 import { useQuasar } from "quasar"
-import { setPersonalDataValue, setGuidelinesKey, setCareersKey, setGrowthValueKey, setPcData } from './js/setter.js'
+import axios from "axios"
+
+import { setPersonalDataValue, setGuidelinesKey, setCareersKey, setGrowthValueKey, setNoteValue, setPcData } from './js/setter.js'
 import { createKeysByType } from './js/keys.js'
 import { openGetDataDialog, openPutDataDialog, openChatPalletDaialog } from './js/dialog.js'
 import { initText, setTextExplanation } from './js/growthText.js'
@@ -11,6 +13,36 @@ import pcJson from './json/pc.json'
 import definition from './json/definition.json'
 import careers from './json/careers.json'
 import guidelines from './json/guidlines.json'
+
+const jsonDataServerUrl = import.meta.env.VITE_JSON_DATA_SERVER_URL
+
+function setPcDataFromDataList(_, row){
+    pcData.value = row.content
+}
+
+function getJson(){
+    const config = {
+        url: jsonDataServerUrl + '?delete=false&_sort=created_at&_order=desc'
+    }
+    axios.get(config.url).then((response) => {
+        pcRows.value = response.data
+    })
+}
+
+function postJson(){
+    const config = {
+        url: jsonDataServerUrl,
+        params: {
+            title: pcData.value.personalData.name.value,
+            delete: false,
+            created_at: new Date().toISOString(),
+            content: pcData.value
+        }
+    }
+    axios.post(config.url, config.params).then(() => {
+        getJson()
+    })
+}
 
 function getRows(items) {
     const keys = Object.keys(items)
@@ -67,6 +99,17 @@ const guidelineColumns = ref([
     { name: 'commandSkillExplanation', label: '説明', sortable: true, field: 'commandSkillExplanation' }
 ])
 
+const getTag = new Function('return function field(row){ return row.content.note.tag.value}')
+const getCreationComment = new Function('return function field(row){ return row.content.note.creationComment.value}')
+
+const pcColumns = ref([
+    { name: 'name', label: 'PC名', field: 'title' },
+    { name: 'date', label: '作成日時', field: 'created_at' },
+    { name: 'tag', label: 'タグ', sortable: true, field: getTag() },
+    { name: 'creationComment', label: '作成者メモ', sortable: true, field: getCreationComment() }
+])
+
+const pcRows = ref(getJson())
 const careerRows = ref(getRows(careers))
 const firstGuidelineRow = ref(getRows(guidelines.firstGuideline))
 const secondGuidelineRow = ref(getRows(guidelines.secondGuideline))
@@ -91,7 +134,6 @@ initText(growthItemValues, growthkeysArray)
 setPcData(pcData)
 
 const $q = useQuasar()
-
 
 function getChatPallet(pcData) {
     const chatPallet = {
@@ -137,6 +179,25 @@ function showChatPallet() {
 async function putDataByButton() {
     const data = await openPutDataDialog($q)
     pcData.value = JSON.parse(data)
+    /**
+     * データ項目を追加したのでアドホックな対策
+     */
+    if(typeof pcData.value.note == 'undefined'){
+        pcData.value.note={
+            characterBackgroundText: {
+                label: "PC設定",
+                value: null
+            },
+            tag: {
+                label: "タグ",
+                value: null
+            },
+            creationComment: {
+                label: "作成者メモ",
+                value: null
+            }
+        }
+    }
 }
 
 function setPersonalData(key) {
@@ -149,6 +210,10 @@ function setGuidelines(key) {
 
 function setCareers(key) {
     setCareersKey(key, pcData, $q)
+}
+
+function setNote(key) {
+    setNoteValue(key, pcData, $q)
 }
 
 function setGrowthValues(key, growthValueKey) {
@@ -178,6 +243,7 @@ function initTextByButton() {
         <q-tab name="firstGuidelineList" label="第一指針リスト" />
         <q-tab name="secondGuidelineList" label="第二指針リスト" />
         <q-tab name="careerList" label="経歴リスト" />
+        <q-tab name="managePcData" label="データ管理" />
     </q-tabs>
     <q-tab-panels v-model="tab">
         <q-tab-panel name="create">
@@ -226,13 +292,15 @@ function initTextByButton() {
                                 <div class="row table-header">
                                     <div class="col">PAD</div>
                                     <div class="col">名前</div>
-                                    <div class="col">効果</div>
                                 </div>
                                 <div class="row table-body" v-for="item in pcData.personalAbilityDices"
                                     v-bind:key="item.label">
                                     <div class="col first-col">{{ item.label }}</div>
-                                    <div class="col">{{ item.personalAbility.label }}</div>
-                                    <div class="col">{{ item.personalAbility.explanation }}</div>
+                                    <div class="col text-center">{{ item.personalAbility.label }}
+                                        <q-tooltip v-if="item.personalAbility.label" anchor="center right" self="center left">
+                                            {{ item.personalAbility.explanation }}
+                                        </q-tooltip>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -272,6 +340,18 @@ function initTextByButton() {
                                             </q-tooltip>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row table-header">
+                                    <div class="col col-2">項目名</div>
+                                    <div class="col">内容</div>
+                                </div>
+                                <div class="row table-body" v-for="(item,index) in pcData.note" v-bind:key="item.label">
+                                    <div class="col col-2 first-col">{{ item.label }}</div>
+                                    <div class="col " v-on:dblclick="setNote(index)">{{ item.value }}</div>
                                 </div>
                             </div>
                         </div>
@@ -372,6 +452,12 @@ function initTextByButton() {
         </q-tab-panel>
         <q-tab-panel name="careerList">
             <q-table title="経歴リスト" :rows="careerRows" :columns="careerColumns" row-key="name">
+            </q-table>
+        </q-tab-panel>
+        <q-tab-panel name="managePcData">
+            <q-btn class="bg-cyan-2 text-indigo-14" label="現在のデータを登録" v-on:click="postJson" />
+            <q-btn class="bg-cyan-2 text-indigo-14" label="データリスト最新化" v-on:click="getJson" />
+            <q-table title="データリスト(ダブルクリックで読み込み)" :rows="pcRows" :columns="pcColumns" row-key="name" @row-dblclick="setPcDataFromDataList">
             </q-table>
         </q-tab-panel>
     </q-tab-panels>
