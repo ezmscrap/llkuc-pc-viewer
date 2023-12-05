@@ -257,7 +257,6 @@ function initTextByButton() {
                                     <div class="col text-center">{{ item.value }}</div>
                                 </div>
                             </div>
-
                             <div class="col">
                                 <div class="row table-header">
                                     <div class="col">特技名</div>
