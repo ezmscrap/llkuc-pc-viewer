@@ -127,17 +127,11 @@ function resetNormalSkillValueInCareers(pcData){
     const careerKey = careerKeys[index]
     const careerObj = pcData.value.careers[careerKey]
     const normalSkillsObj = careerObj.career.normalSkills
-    console.log('careerObj')
-    console.log(careerObj)
-    console.log('normalSkillsObj')
-    console.log(normalSkillsObj)
     if(normalSkillsObj){
       const skillKeys = Object.keys(normalSkillsObj)      
       for(let skillIndex=0;skillIndex<skillKeys.length;skillIndex++){
         const skillKey = skillKeys[skillIndex]
         const skillObj = normalSkillsObj[skillKey]
-        console.log('skillObj')
-        console.log(skillObj)
         if(skillObj){
           skillObj.value = initialValue
         }
