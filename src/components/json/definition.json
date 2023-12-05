@@ -1,4 +1,25 @@
 {
+  "characterBackgroundText": {
+    "label": "PC設定",
+    "type": {
+      "key": "note",
+      "label": "補記"
+    }
+  },
+  "tag": {
+    "label": "タグ",
+    "type": {
+      "key": "note",
+      "label": "補記"
+    }
+  },
+  "creationComment": {
+    "label": "作成者メモ",
+    "type": {
+      "key": "note",
+      "label": "補記"
+    }
+  },
   "proficiencyLevel": {
     "label": "熟練度",
     "type": {
