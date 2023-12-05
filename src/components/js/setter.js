@@ -7,7 +7,8 @@ import {
   openGuidelineDialog,
   openPersonalDataDialog,
   openCareerDialog,
-  openGrowthValueDialog
+  openGrowthValueDialog,
+  openNoteDialog
 } from './dialog.js'
 import { createGrowthText } from './growthText.js'
 
@@ -84,6 +85,11 @@ function setSubAbilityValues(pcData) {
 export async function setPersonalDataValue(key, pcData, $q) {
   const data = await openPersonalDataDialog(key, $q)
   pcData.value.personalData[key].value = data
+}
+
+export async function setNoteValue(key, pcData, $q) {
+  const data = await openNoteDialog(key, $q)
+  pcData.value.note[key].value = data
 }
 
 export async function setGuidelinesKey(key, pcData, $q) {
