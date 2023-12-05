@@ -10,13 +10,14 @@ import { initText, setTextExplanation } from './js/growthText.js'
 import pcJson from './json/pc.json'
 import definition from './json/definition.json'
 import careers from './json/careers.json'
+import guidelines from './json/guidlines.json'
 
-function getCareerColumns(careers){
-    const keys = Object.keys(careers)
+function getRows(items){
+    const keys = Object.keys(items)
     const columns = []
     for(let index=0;index<keys.length;index++){
         const key = keys[index]
-        const item = careers[key]
+        const item = items[key]
         const newItem={
             name:item.label
         }
@@ -25,18 +26,24 @@ function getCareerColumns(careers){
             const abilityValueKey = abilityValueKeys[abilityValueIndex]
             newItem[abilityValueKey]=item.abilityValues[abilityValueKey].value
         }
-        const normalSkillKeys = Object.keys(item.normalSkills)
-        const normalSkillLabel=['skill-1','skill-2']
-        for(let normalSkillIndex=0;normalSkillIndex<normalSkillKeys.length;normalSkillIndex++){
-            const normalSkillKey = normalSkillKeys[normalSkillIndex]
-            newItem[normalSkillLabel[normalSkillIndex]]=item.normalSkills[normalSkillKey].label
+        if(item.normalSkills){
+            const normalSkillKeys = Object.keys(item.normalSkills)
+            const normalSkillLabel=['skill-1','skill-2']
+            for(let normalSkillIndex=0;normalSkillIndex<normalSkillKeys.length;normalSkillIndex++){
+                const normalSkillKey = normalSkillKeys[normalSkillIndex]
+                newItem[normalSkillLabel[normalSkillIndex]]=item.normalSkills[normalSkillKey].label
+            }
+        }
+        if(item.commandSkill){
+            newItem['commandSkillLabel']=item.commandSkill.label
+            newItem['commandSkillExplanation']=item.commandSkill.explanation
         }
         columns.push(newItem)
     }
     return columns
 }
 
-const columns=ref([
+const careerColumns=ref([
     {name: 'name',label:'経歴名',field: 'name'},
     {name: 'motion',label:'運動',sortable: true,field: 'motion'},
     {name: 'Technique',label:'技量',sortable: true,field: 'Technique'},
@@ -46,8 +53,25 @@ const columns=ref([
     {name: 'psychic',label:'感応',sortable: true,field: 'psychic'},
     {name: 'skill-1',label:'技能-1',sortable: true,field: 'skill-1'},
     {name: 'skill-2',label:'技能-2',sortable: true,field: 'skill-2'},
+    {name: 'commandSkillLabel',label:'指揮特技',sortable: true,field: 'commandSkillLabel'},
+    {name: 'commandSkillExplanation',label:'説明',sortable: true,field: 'commandSkillLabel'},
 ])
-const careerColumns = ref(getCareerColumns(careers))
+
+const guidelineColumns=ref([
+    {name: 'name',label:'経歴名',field: 'name'},
+    {name: 'motion',label:'運動',sortable: true,field: 'motion'},
+    {name: 'Technique',label:'技量',sortable: true,field: 'Technique'},
+    {name: 'reflexes',label:'反応',sortable: true,field: 'reflexes'},
+    {name: 'physical',label:'体力',sortable: true,field: 'physical'},
+    {name: 'intelligence',label:'知力',sortable: true,field: 'intelligence'},
+    {name: 'psychic',label:'感応',sortable: true,field: 'psychic'},
+    {name: 'commandSkillLabel',label:'指揮特技',sortable: true,field: 'commandSkillLabel'},
+    {name: 'commandSkillExplanation',label:'説明',sortable: true,field: 'commandSkillLabel'},
+])
+
+const careerRows = ref(getRows(careers))
+const firstGuidelineRow = ref(getRows(guidelines.firstGuideline))
+const secondGuidelineRow = ref(getRows(guidelines.secondGuideline))
 
 const pcData = ref(pcJson)
 const tab =ref('create')
@@ -154,7 +178,9 @@ function initTextByButton() {
     <q-tabs v-model="tab"
         class="text-teal">
         <q-tab name="create" label="キャラクタ作成" />
-        <q-tab name="list" label="データリスト" />
+        <q-tab name="firstGuidelineList" label="第一指針リスト" />
+        <q-tab name="secondGuidelineList" label="第二指針リスト" />
+        <q-tab name="careerList" label="経歴リスト" />
     </q-tabs>
     <q-tab-panels v-model="tab">
         <q-tab-panel name="create">
@@ -332,12 +358,32 @@ function initTextByButton() {
                 </div>
             </div>
         </q-tab-panel>
-        <q-tab-panel name="list">
+        <q-tab-panel name="firstGuidelineList">
+            <q-table
+                title="第一指針リスト"
+                :rows="firstGuidelineRow"
+                :columns="guidelineColumns"
+                row-key="name"
+                >
+            </q-table>
+        </q-tab-panel>
+        <q-tab-panel name="secondGuidelineList">
+            <q-table
+                title="第二指針リスト"
+                :rows="secondGuidelineRow"
+                :columns="guidelineColumns"
+                row-key="name"
+                >
+            </q-table>
+        </q-tab-panel>
+        <q-tab-panel name="careerList">
             <q-table
                 title="経歴リスト"
-                :rows="careerColumns"
-                :columns="columns"
-                row-key="name"         />
+                :rows="careerRows"
+                :columns="careerColumns"
+                row-key="name"
+                >
+            </q-table>
         </q-tab-panel>
     </q-tab-panels>
 </template>
