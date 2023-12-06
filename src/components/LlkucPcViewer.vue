@@ -4,9 +4,18 @@ import { useClipboard } from '@vueuse/core'
 import { useQuasar } from "quasar"
 import axios from "axios"
 
-import { setPersonalDataValue, setGuidelinesKey, setCareersKey, setGrowthValueKey, setNoteValue, setPcData } from './js/setter.js'
+import { 
+    setPersonalDataValue, 
+    setGuidelinesKey, 
+    setCareersKey, 
+    setGrowthValueKey, 
+    setNoteValue, 
+    setPcData } from './js/setter.js'
 import { createKeysByType } from './js/keys.js'
-import { openGetDataDialog, openPutDataDialog, openChatPalletDaialog } from './js/dialog.js'
+import { 
+    openChatPalletDaialog,
+    openGetDataDialog, 
+    openPutDataDialog } from './js/dialog.js'
 import { initText, setTextExplanation } from './js/growthText.js'
 
 import pcJson from './json/pc.json'
@@ -16,11 +25,108 @@ import guidelines from './json/guidlines.json'
 
 const jsonDataServerUrl = import.meta.env.VITE_JSON_DATA_SERVER_URL
 
-function setPcDataFromDataList(_, row){
+function setPcDataFromDataList(_, row) {
     pcData.value = row.content
+    currentId.value = row.id
 }
 
-function getJson(){
+function updateData(){
+    if(currentId.value == 0){
+        return
+    }
+    const url = jsonDataServerUrl + '/' + currentId.value
+    
+    const config = {
+        url: url,
+        params: {
+            title: pcData.value.personalData.name.value,
+            delete: false,
+            created_at: new Date().toISOString(),
+            content: pcData.value
+        }
+    }
+    axios.put(config.url, config.params).then((response) => {
+        console.log('response')
+        console.log(response)
+        currentId.value=response.data.id
+        getJson()
+    })
+}
+
+function putJson() {
+    /**
+     * 現在読み込んだPCデータリストの中に、指定されたIDが無ければ復活とみなす
+     * なので、 delete フラグを false にする
+     * (全部を見て、一致するものがあれば消す true の値にしている)
+     */
+
+    const length = pcRows.value.length
+    const url = jsonDataServerUrl + '/' + deleteId.value
+    let deleteFlag = false
+    let TargetPcData = {}
+
+    console.log('deleteId.value')
+    console.log(deleteId.value)
+
+    for (let index = 0; index < length; index++) {
+        const id = pcRows.value[index].id
+        if (id == deleteId.value) {
+            deleteFlag = true
+            TargetPcData = pcRows.value[index].content
+        }
+    }
+
+    console.log('TargetPcData')
+    console.log(TargetPcData)
+
+    /**
+     * deleteFlag が false のままなのは手元に当該のデータがないから。
+     * なので、getしてputしなおす。
+     */
+    console.log(deleteFlag)
+    if(deleteFlag == false){
+        axios.get(url).then((response) => {
+            console.log('response')
+            console.log(response)
+            const config = {
+                url: url,
+                params: {
+                    title: response.data.title,
+                    delete: deleteFlag,
+                    created_at: new Date().toISOString(),
+                    content: response.data.content
+                }
+            }
+            axios.put(config.url, config.params).then((response) => {
+                console.log('response')
+                console.log(response)
+                getJson()
+            })
+        })
+    } 
+    if(deleteFlag == true){
+        /**
+         * 削除フラグ が trueなら、そのままputする
+         */
+        const config = {
+            url: url,
+            params: {
+                title: pcData.value.personalData.name.value,
+                delete: deleteFlag,
+                created_at: new Date().toISOString(),
+                content: TargetPcData
+            }
+        }
+        axios.put(config.url, config.params).then((response) => {
+            console.log('response')
+            console.log(response)
+            currentId.value=response.data.id
+            getJson()
+        })
+    }
+}
+
+function getJson() {
     const config = {
         url: jsonDataServerUrl + '?delete=false&_sort=created_at&_order=desc'
     }
@@ -29,7 +135,7 @@ function getJson(){
     })
 }
 
-function postJson(){
+function postJson() {
     const config = {
         url: jsonDataServerUrl,
         params: {
@@ -39,7 +145,10 @@ function postJson(){
             content: pcData.value
         }
     }
-    axios.post(config.url, config.params).then(() => {
+    axios.post(config.url, config.params).then((response) => {
+        console.log('response')
+        console.log(response)
+        currentId.value=response.data.id
         getJson()
     })
 }
@@ -103,6 +212,7 @@ const getTag = new Function('return function field(row){ return row.content.note
 const getCreationComment = new Function('return function field(row){ return row.content.note.creationComment.value}')
 
 const pcColumns = ref([
+    { name: 'id', label: 'ID', field: 'id' },
     { name: 'name', label: 'PC名', field: 'title' },
     { name: 'date', label: '作成日時', field: 'created_at' },
     { name: 'tag', label: 'タグ', sortable: true, field: getTag() },
@@ -113,6 +223,9 @@ const pcRows = ref(getJson())
 const careerRows = ref(getRows(careers))
 const firstGuidelineRow = ref(getRows(guidelines.firstGuideline))
 const secondGuidelineRow = ref(getRows(guidelines.secondGuideline))
+
+const deleteId = ref(0)
+const currentId = ref(0)
 
 const pcData = ref(pcJson)
 const tab = ref('create')
@@ -182,8 +295,8 @@ async function putDataByButton() {
     /**
      * データ項目を追加したのでアドホックな対策
      */
-    if(typeof pcData.value.note == 'undefined'){
-        pcData.value.note={
+    if (typeof pcData.value.note == 'undefined') {
+        pcData.value.note = {
             characterBackgroundText: {
                 label: "PC設定",
                 value: null
@@ -235,6 +348,7 @@ function initTextByButton() {
         LLKUC PC作成表示アプリ(プロト版)
         <q-space />
         <q-btn class="bg-cyan-2 text-indigo-14" label="パレット出力" v-on:click="showChatPallet" />
+        <q-btn v-if="currentId != 0" class="bg-cyan-2 text-indigo-14" label="現在のデータを更新" v-on:click="updateData" />
         <q-btn class="bg-cyan-2 text-indigo-14" label="情報出力" v-on:click="getDataByButton" />
         <q-btn class="bg-cyan-2 text-indigo-14" label="情報入力" v-on:click="putDataByButton" />
     </q-toolbar>
@@ -297,7 +411,8 @@ function initTextByButton() {
                                     v-bind:key="item.label">
                                     <div class="col first-col">{{ item.label }}</div>
                                     <div class="col text-center">{{ item.personalAbility.label }}
-                                        <q-tooltip v-if="item.personalAbility.label" anchor="center right" self="center left">
+                                        <q-tooltip v-if="item.personalAbility.label" anchor="center right"
+                                            self="center left">
                                             {{ item.personalAbility.explanation }}
                                         </q-tooltip>
                                     </div>
@@ -349,9 +464,9 @@ function initTextByButton() {
                                     <div class="col col-2">項目名</div>
                                     <div class="col">内容</div>
                                 </div>
-                                <div class="row table-body" v-for="(item,index) in pcData.note" v-bind:key="item.label">
+                                <div class="row table-body" v-for="(item, index) in pcData.note" v-bind:key="item.label">
                                     <div class="col col-2 first-col">{{ item.label }}</div>
-                                    <div class="col " v-on:dblclick="setNote(index)">{{ item.value }}</div>
+                                    <div class="col crilable-col" v-on:dblclick="setNote(index)">{{ item.value }}</div>
                                 </div>
                             </div>
                         </div>
@@ -455,10 +570,32 @@ function initTextByButton() {
             </q-table>
         </q-tab-panel>
         <q-tab-panel name="managePcData">
-            <q-btn class="bg-cyan-2 text-indigo-14" label="現在のデータを登録" v-on:click="postJson" />
-            <q-btn class="bg-cyan-2 text-indigo-14" label="データリスト最新化" v-on:click="getJson" />
-            <q-table title="データリスト(ダブルクリックで読み込み)" :rows="pcRows" :columns="pcColumns" row-key="name" @row-dblclick="setPcDataFromDataList">
-            </q-table>
+            <div>
+                <q-toolbar class="bg-secondary text-white">
+                    <q-btn class="bg-cyan-2 text-indigo-14" label="現在のデータを登録" v-on:click="postJson" />
+                    <q-space></q-space>
+                    <q-btn class="bg-cyan-2 text-indigo-14" label="データリスト最新化" v-on:click="getJson" />
+                </q-toolbar>
+                <q-card class="bg-info text-white">
+                    <q-card-section>
+                        <div class="text-h4">{{ pcData.personalData.name.value }} </div>
+                    </q-card-section>
+                    <q-card-section>{{ pcData.note.creationComment.value }}</q-card-section>
+                    <q-separator></q-separator>
+                    <q-card-actions>{{ pcData.note.tag.value }}</q-card-actions>
+                </q-card>
+                <q-table title="データリスト(ダブルクリックで読み込み)" :rows="pcRows" :columns="pcColumns" row-key="name"
+                    @row-dblclick="setPcDataFromDataList">
+                </q-table>
+            </div>
+            <div class="row">
+                <div class="col col-2">
+                    <q-input filled v-model="deleteId" label="表示/非表示を切り替えたいID" />
+                </div>
+                <div class="col">
+                    <q-btn class="bg-cyan-2 text-indigo-14" label="書き換え実行" v-on:click="putJson" />
+                </div>
+            </div>
         </q-tab-panel>
     </q-tab-panels>
 </template>
