@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import { useClipboard } from '@vueuse/core'
 import { useQuasar } from "quasar"
+import { useRoute } from 'vue-router'
 import axios from "axios"
 
 import { 
@@ -52,6 +53,7 @@ function updateData(){
         getJson()
     })
 }
+
 
 function putJson() {
     /**
@@ -132,6 +134,12 @@ function getJson() {
     }
     axios.get(config.url).then((response) => {
         pcRows.value = response.data
+        for (let index = 0; index < pcRows.value.length; index++) {
+            if (pcRows.value[index].id == presetPcId) {
+                pcData.value = pcRows.value[index].content
+                currentId.value = presetPcId
+            }
+        }
     })
 }
 
@@ -219,6 +227,7 @@ const pcColumns = ref([
     { name: 'creationComment', label: '作成者メモ', sortable: true, field: getCreationComment() }
 ])
 
+
 const pcRows = ref(getJson())
 const careerRows = ref(getRows(careers))
 const firstGuidelineRow = ref(getRows(guidelines.firstGuideline))
@@ -230,6 +239,8 @@ const currentId = ref(0)
 const pcData = ref(pcJson)
 const tab = ref('create')
 
+const route = useRoute()
+const presetPcId = parseInt(route.params.pcId,10)
 const growthItemValues = ref({
     explanation: '',
     values: {}
@@ -276,6 +287,7 @@ function getChatPallet(pcData) {
     }
     return JSON.stringify(chatPallet)
 }
+
 
 function getDataByButton() {
     const text = JSON.stringify(pcData.value)
