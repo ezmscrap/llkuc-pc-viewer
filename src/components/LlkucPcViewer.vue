@@ -48,8 +48,6 @@ function updateData(){
         }
     }
     axios.put(config.url, config.params).then((response) => {
-        console.log('response')
-        console.log(response)
         currentId.value=response.data.id
         getJson()
     })
@@ -68,9 +66,6 @@ function putJson() {
     let deleteFlag = false
     let TargetPcData = {}
 
-    console.log('deleteId.value')
-    console.log(deleteId.value)
-
     for (let index = 0; index < length; index++) {
         const id = pcRows.value[index].id
         if (id == deleteId.value) {
@@ -79,18 +74,12 @@ function putJson() {
         }
     }
 
-    console.log('TargetPcData')
-    console.log(TargetPcData)
-
     /**
      * deleteFlag が false のままなのは手元に当該のデータがないから。
      * なので、getしてputしなおす。
      */
-    console.log(deleteFlag)
     if(deleteFlag == false){
         axios.get(url).then((response) => {
-            console.log('response')
-            console.log(response)
             const config = {
                 url: url,
                 params: {
@@ -101,8 +90,7 @@ function putJson() {
                 }
             }
             axios.put(config.url, config.params).then((response) => {
-                console.log('response')
-                console.log(response)
+                currentId.value=response.data.id
                 getJson()
             })
         })
@@ -121,8 +109,6 @@ function putJson() {
             }
         }
         axios.put(config.url, config.params).then((response) => {
-            console.log('response')
-            console.log(response)
             currentId.value=response.data.id
             getJson()
         })
@@ -165,8 +151,6 @@ function postJson() {
         }
     }
     axios.post(config.url, config.params).then((response) => {
-        console.log('response')
-        console.log(response)
         currentId.value=response.data.id
         getJson()
     })
