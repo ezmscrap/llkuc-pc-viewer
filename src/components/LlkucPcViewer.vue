@@ -26,9 +26,24 @@ import guidelines from './json/guidlines.json'
 
 const jsonDataServerUrl = import.meta.env.VITE_JSON_DATA_SERVER_URL
 
+/**
+ * ブラウザの履歴に引数で指定したurlを追加する
+ * @param {string} url ブラウザの履歴に追加したいURL
+ */
+function pushHistory(url) {
+    history.pushState({}, '', url)
+}
+
+function getUrlById(id){
+    const base = import.meta.env.VITE_APP_BASE_URL
+    const pathname = "/#/id/" + id.toString(10)
+    return new URL(pathname, base)
+}
+
 function setPcDataFromDataList(_, row) {
     pcData.value = row.content
     currentId.value = row.id
+    pushHistory(getUrlById(row.id))
     setPcData(pcData)
 }
 
@@ -49,6 +64,7 @@ function updateData(){
     }
     axios.put(config.url, config.params).then((response) => {
         currentId.value=response.data.id
+        pushHistory(getUrlById(response.data.id))
         getJson()
     })
 }
@@ -91,6 +107,7 @@ function putJson() {
             }
             axios.put(config.url, config.params).then((response) => {
                 currentId.value=response.data.id
+                pushHistory(getUrlById(response.data.id))
                 getJson()
             })
         })
@@ -110,6 +127,7 @@ function putJson() {
         }
         axios.put(config.url, config.params).then((response) => {
             currentId.value=response.data.id
+            pushHistory(getUrlById(response.data.id))
             getJson()
         })
     }
@@ -133,6 +151,7 @@ function getJson() {
                      * データを読み込んだら最新データで能力値再計算し、後処理
                      */
                     currentId.value = presetPcId.value
+                    pushHistory(getUrlById(presetPcId.value))
                     presetPcId.value = 0
                 }
             }
@@ -152,6 +171,7 @@ function postJson() {
     }
     axios.post(config.url, config.params).then((response) => {
         currentId.value=response.data.id
+        pushHistory(getUrlById(response.data.id))
         getJson()
     })
 }
