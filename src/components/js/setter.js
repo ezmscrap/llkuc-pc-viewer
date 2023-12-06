@@ -65,42 +65,28 @@ function setSubAbilityValues(pcData) {
   const keys = Object.keys(specialSkills)
   for(let index=0;index < keys.length;index++){
     const key = keys[index]
-    console.log('key')
-    console.log(key)
     const correction = specialSkills[key].correction
-    console.log('specialSkills[key].label')
-    console.log(specialSkills[key].label)
-    console.log('correction')
-    console.log(correction)
     if(correction){
       const levelValues = correction.levelValues
       if(levelValues){
         if(levelValues.pilotLevel){
           pilotLevel += levelValues.pilotLevel.value
-          console.log('pilotLevel')
-          console.log(pilotLevel)
         }
       }
       const subAbilityValues = correction.subAbilityValues
       if(subAbilityValues){
         if(subAbilityValues.lifePoint){
           lifePoint += subAbilityValues.lifePoint.value
-          console.log('lifePoint')
-          console.log(lifePoint)
         }
         if(subAbilityValues.moralePoint){
           moralePoint += subAbilityValues.moralePoint.value
-          console.log('moralePoint')
-          console.log(moralePoint)
         }
         /**
-         * 最初にあったバグ対応
+         * 最初にあったバグ対応 何故か先読みのsubAbilityValuesが2重になっている
          **/
         if(subAbilityValues.subAbilityValues){
           if(subAbilityValues.subAbilityValues.moralePoint){
             moralePoint += subAbilityValues.subAbilityValues.moralePoint.value
-            console.log('moralePoint')
-            console.log(moralePoint)
           }
         }
       }
