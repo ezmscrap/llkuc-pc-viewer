@@ -29,6 +29,7 @@ const jsonDataServerUrl = import.meta.env.VITE_JSON_DATA_SERVER_URL
 function setPcDataFromDataList(_, row) {
     pcData.value = row.content
     currentId.value = row.id
+    setPcData(pcData)
 }
 
 function updateData(){
@@ -134,10 +135,20 @@ function getJson() {
     }
     axios.get(config.url).then((response) => {
         pcRows.value = response.data
-        for (let index = 0; index < pcRows.value.length; index++) {
-            if (pcRows.value[index].id == presetPcId) {
-                pcData.value = pcRows.value[index].content
-                currentId.value = presetPcId
+        /**
+         * もしも、初期値 presetPcId 0より大きければ、そのデータを読み込む
+         */
+        if(presetPcId.value > 0){
+            for (let index = 0; index < pcRows.value.length; index++) {
+                if (pcRows.value[index].id == presetPcId.value) {
+                    pcData.value = pcRows.value[index].content
+                    setPcData(pcData)
+                    /**
+                     * データを読み込んだら最新データで能力値再計算し、後処理
+                     */
+                    currentId.value = presetPcId.value
+                    presetPcId.value = 0
+                }
             }
         }
     })
@@ -240,7 +251,7 @@ const pcData = ref(pcJson)
 const tab = ref('create')
 
 const route = useRoute()
-const presetPcId = parseInt(route.params.pcId,10)
+const presetPcId = ref(parseInt(route.params.pcId,10))
 const growthItemValues = ref({
     explanation: '',
     values: {}

@@ -381,7 +381,7 @@
       "label": "数値修正",
       "levelValues": {
         "pilotLevel": {
-          "value":1
+          "value": 1
         }
       }
     },
@@ -490,11 +490,9 @@
     "correction": {
       "label": "数値修正",
       "subAbilityValues": {
-        "subAbilityValues": {
-          "moralePoint": {
-            "label": "LP",
-            "value": 4
-          }
+        "moralePoint": {
+          "label": "MP",
+          "value": 4
         }
       }
     },
@@ -623,10 +621,10 @@
     },
     "correction": {
       "label": "数値修正",
-        "levelValues": {
-          "pilotLevel": {
-            "value":1
-          }
+      "levelValues": {
+        "pilotLevel": {
+          "value": 1
+        }
       }
     }
   },

@@ -54,29 +54,59 @@ function setSubAbilityValues(pcData) {
     delete pcData.value.subAbilityValues.LifePoint
   }
 
+  const pilotLevelObj = pcData.value.levelValues.pilotLevel
   const lifePointObj = pcData.value.subAbilityValues.lifePoint
   const moralePointObj = pcData.value.subAbilityValues.moralePoint
+  let pilotLevel = pcData.value.levelValues.pilotLevel.value
   let lifePoint = geLifePoint(pcData)
   let moralePoint = getMoralePoint(pcData)
-/** 暫定削除
+
   const specialSkills = pcData.value.specialSkills
   const keys = Object.keys(specialSkills)
   for(let index=0;index < keys.length;index++){
-    const key = specialSkills[index]
+    const key = keys[index]
+    console.log('key')
+    console.log(key)
     const correction = specialSkills[key].correction
+    console.log('specialSkills[key].label')
+    console.log(specialSkills[key].label)
+    console.log('correction')
+    console.log(correction)
     if(correction){
+      const levelValues = correction.levelValues
+      if(levelValues){
+        if(levelValues.pilotLevel){
+          pilotLevel += levelValues.pilotLevel.value
+          console.log('pilotLevel')
+          console.log(pilotLevel)
+        }
+      }
       const subAbilityValues = correction.subAbilityValues
       if(subAbilityValues){
-        if(subAbilityValues.LifePoint){
-          lifePoint += subAbilityValues.LifePoint.value
+        if(subAbilityValues.lifePoint){
+          lifePoint += subAbilityValues.lifePoint.value
+          console.log('lifePoint')
+          console.log(lifePoint)
         }
         if(subAbilityValues.moralePoint){
-          lifePoint += subAbilityValues.LifePoint.value
+          moralePoint += subAbilityValues.moralePoint.value
+          console.log('moralePoint')
+          console.log(moralePoint)
+        }
+        /**
+         * 最初にあったバグ対応
+         **/
+        if(subAbilityValues.subAbilityValues){
+          if(subAbilityValues.subAbilityValues.moralePoint){
+            moralePoint += subAbilityValues.subAbilityValues.moralePoint.value
+            console.log('moralePoint')
+            console.log(moralePoint)
+          }
         }
       }
     }
   }
-  **/
+  pilotLevelObj.value = pilotLevel
   lifePointObj.value = lifePoint
   moralePointObj.value = moralePoint
 
