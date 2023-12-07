@@ -5,6 +5,7 @@ import { useQuasar } from "quasar"
 import { useRoute } from 'vue-router'
 import axios from "axios"
 
+import { getChatPallet } from './js/chatPallet.js'
 import { 
     setPersonalDataValue, 
     setGuidelinesKey, 
@@ -13,10 +14,7 @@ import {
     setNoteValue, 
     setPcData } from './js/setter.js'
 import { createKeysByType } from './js/keys.js'
-import { 
-    openChatPalletDaialog,
-    openGetDataDialog, 
-    openPutDataDialog } from './js/dialog.js'
+import { openGetDataDialog, openPutDataDialog } from './js/dialog.js'
 import { initText, setTextExplanation } from './js/growthText.js'
 
 import pcJson from './json/pc.json'
@@ -285,6 +283,7 @@ const secondGuidelineRow = ref(getRows(guidelines.secondGuideline))
 
 const deleteId = ref(0)
 const currentId = ref(0)
+const chatPallet = ref('')
 
 const pcData = ref(pcJson)
 const tab = ref('create')
@@ -343,47 +342,34 @@ setPcData(pcData)
 
 const $q = useQuasar()
 
-function getChatPallet(pcData) {
-    const chatPallet = {
-        kind: 'character',
-        data: {
-            name: pcData.value.personalData.name.value,
-            externalUrl: '',
-            iconUrl: '',
-            color: "#FF0066",
-            secret: false,
-            commands: 'commands',
-            memo: 'memo',
-            status: [
-                {
-                    label: 'LP',
-                    value: pcData.value.subAbilityValues.lifePoint.value,
-                    max: pcData.value.subAbilityValues.lifePoint.value
-                }
-            ],
-            params: [
-                {
-                    label: '運動',
-                    value: pcData.value.abilityValues.motion.value + '(' + pcData.value.abilityValues.motion.correction + ')'
-                }
-            ]
-        }
-    }
-    return JSON.stringify(chatPallet)
-}
-
-
 function getDataByButton() {
     const text = JSON.stringify(pcData.value)
     copy(text)
     openGetDataDialog(text, $q)
 }
 
-function showChatPallet() {
-    const text = getChatPallet(pcData)
-    copy(text)
-    openChatPalletDaialog(text, $q)
+function getExternalUrl(){
+    if(currentId.value != 0){
+        return getUrlById(currentId.value)
+    }
+    return ''
 }
+
+function copyChatPallet(){
+    const externalUrl = getExternalUrl()
+    const text = getChatPallet(pcData, externalUrl)
+    copy(text)
+    chatPallet.value=text
+}
+
+/**
+ * 今は使わないので暫定で一括コメントアウト
+ */
+// function showChatPallet() {
+//     const text = getChatPallet(pcData)
+//     copy(text)
+//     openChatPalletDaialog(text, $q)
+// }
 
 async function putDataByButton() {
     const data = await openPutDataDialog($q)
@@ -443,13 +429,13 @@ function initTextByButton() {
     <q-toolbar class="bg-primary text-white">
         LLKUC PC作成表示アプリ(プロト版)
         <q-space />
-        <q-btn class="bg-cyan-2 text-indigo-14" label="パレット出力" v-on:click="showChatPallet" />
         <q-btn v-if="currentId != 0" class="bg-cyan-2 text-indigo-14" label="現在のデータを更新" v-on:click="updateData" />
         <q-btn class="bg-cyan-2 text-indigo-14" label="情報出力" v-on:click="getDataByButton" />
         <q-btn class="bg-cyan-2 text-indigo-14" label="情報入力" v-on:click="putDataByButton" />
     </q-toolbar>
     <q-tabs v-model="tab" class="text-teal">
         <q-tab name="create" label="キャラクタ作成" />
+        <q-tab name="chatPallet" label="チャットパレット" />
         <q-tab name="firstGuidelineList" label="第一指針リスト" />
         <q-tab name="secondGuidelineList" label="第二指針リスト" />
         <q-tab name="careerList" label="経歴リスト" />
@@ -652,6 +638,14 @@ function initTextByButton() {
                     </div>
                 </div>
             </div>
+        </q-tab-panel>
+        <q-tab-panel name="chatPallet">
+            <q-btn class="bg-cyan-2 text-indigo-14" label="チャットパレットをクリップボードにコピーする" v-on:click="copyChatPallet" />
+            <q-card>
+                <q-card-section>
+                    {{ chatPallet }}
+                </q-card-section>
+            </q-card>
         </q-tab-panel>
         <q-tab-panel name="firstGuidelineList">
             <q-table title="第一指針リスト" :rows="firstGuidelineRow" :columns="guidelineColumns" row-key="name" :rows-per-page-options="[0]">
