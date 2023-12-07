@@ -36,8 +36,8 @@ function pushHistory(url) {
 
 function getUrlById(id){
     const base = import.meta.env.VITE_APP_BASE_URL
-    const pathname = "/#/id/" + id.toString(10)
-    return new URL(pathname, base)
+    const pathname = "#/id/" + id.toString(10)
+    return base + pathname
 }
 
 function setPcDataFromDataList(_, row) {
@@ -585,15 +585,15 @@ function initTextByButton() {
             </div>
         </q-tab-panel>
         <q-tab-panel name="firstGuidelineList">
-            <q-table title="第一指針リスト" :rows="firstGuidelineRow" :columns="guidelineColumns" row-key="name">
+            <q-table title="第一指針リスト" :rows="firstGuidelineRow" :columns="guidelineColumns" row-key="name" :rows-per-page-options="[0]">
             </q-table>
         </q-tab-panel>
         <q-tab-panel name="secondGuidelineList">
-            <q-table title="第二指針リスト" :rows="secondGuidelineRow" :columns="guidelineColumns" row-key="name">
+            <q-table title="第二指針リスト" :rows="secondGuidelineRow" :columns="guidelineColumns" row-key="name" :rows-per-page-options="[0]">
             </q-table>
         </q-tab-panel>
         <q-tab-panel name="careerList">
-            <q-table title="経歴リスト" :rows="careerRows" :columns="careerColumns" row-key="name">
+            <q-table title="経歴リスト" :rows="careerRows" :columns="careerColumns" row-key="name" :rows-per-page-options="[0]">
             </q-table>
         </q-tab-panel>
         <q-tab-panel name="managePcData">
@@ -611,7 +611,7 @@ function initTextByButton() {
                     <q-separator></q-separator>
                     <q-card-actions>{{ pcData.note.tag.value }}</q-card-actions>
                 </q-card>
-                <q-table title="データリスト(ダブルクリックで読み込み)" :rows="pcRows" :columns="pcColumns" row-key="name"
+                <q-table title="データリスト(ダブルクリックで読み込み)" :rows="pcRows" :columns="pcColumns" row-key="name" :rows-per-page-options="[0]"
                     @row-dblclick="setPcDataFromDataList">
                 </q-table>
             </div>
