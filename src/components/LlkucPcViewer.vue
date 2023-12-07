@@ -269,10 +269,10 @@ const getTag = new Function('return function field(row){ return row.content.note
 const getCreationComment = new Function('return function field(row){ return row.content.note.creationComment.value}')
 
 const pcColumns = ref([
-    { name: 'id', label: 'ID', field: 'id' },
-    { name: 'name', label: 'PC名', field: 'title' },
-    { name: 'created_at', label: '作成日時', field: 'created_at' },
-    { name: 'updated_at', label: '更新日時', field: 'updated_at' },
+    { name: 'id', label: 'ID', sortable: true, field: 'id' },
+    { name: 'name', label: 'PC名', sortable: true, field: 'title' },
+    { name: 'created_at', label: '作成日時', sortable: true, field: 'created_at' },
+    { name: 'updated_at', label: '更新日時', sortable: true, field: 'updated_at' },
     { name: 'tag', label: 'タグ', sortable: true, field: getTag() },
     { name: 'creationComment', label: '作成者メモ', sortable: true, field: getCreationComment() }
 ])
@@ -288,6 +288,40 @@ const currentId = ref(0)
 
 const pcData = ref(pcJson)
 const tab = ref('create')
+const search = ref('')
+const pcFilter = ref({
+    search: search.value
+})
+const pcCustomFilter = (rows) => {
+
+    const filteredRows = rows.filter((row) =>{
+        let finalAnswer = false
+        let searchAnswer = true
+        if (pcFilter.value.search.length > 0) {
+            searchAnswer = false
+            let searchTargetValues = []
+            searchTargetValues.push(row.title)
+            searchTargetValues.push(row.created_at)
+            searchTargetValues.push(row.updated_at)
+            searchTargetValues.push(row.content.note.tag.value)
+            searchTargetValues.push(row.content.note.creationComment.value)
+
+            for (let index = 0; index<searchTargetValues.length; index++){
+                if(typeof searchTargetValues[index] == 'string'){
+                    if (searchTargetValues[index].includes(pcFilter.value.search)){
+                        searchAnswer = true
+                        break
+                    }
+                }
+            }
+        }
+        if(searchAnswer){
+            finalAnswer = true
+        }
+        return finalAnswer
+    })
+    return filteredRows
+}
 
 const route = useRoute()
 const presetPcId = ref(parseInt(route.params.pcId,10))
@@ -646,8 +680,25 @@ function initTextByButton() {
                     <q-separator></q-separator>
                     <q-card-actions>{{ pcData.note.tag.value }}</q-card-actions>
                 </q-card>
-                <q-table title="データリスト(ダブルクリックで読み込み)" :rows="pcRows" :columns="pcColumns" row-key="name" :rows-per-page-options="[0]"
+                <q-table 
+                    title="データリスト(ダブルクリックで読み込み)" 
+                    :rows="pcRows" :columns="pcColumns" row-key="name" :rows-per-page-options="[0]"
+                    :filter="pcFilter"
+                    :filter-method="pcCustomFilter"  
                     @row-dblclick="setPcDataFromDataList">
+                    
+                    <template v-slot:top>
+                        <div style="width: 100%" class="row">
+                            <div class="col-9"></div>
+                            <div class="col-3">
+                                <q-input  dense color="primary" v-model="pcFilter.search">
+                                <template v-slot:append>
+                                    <q-icon name="search" />
+                                </template>
+                                </q-input>
+                            </div>
+                        </div>
+                    </template>
                 </q-table>
             </div>
             <div class="row">
