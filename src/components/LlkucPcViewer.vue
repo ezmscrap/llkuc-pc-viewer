@@ -52,13 +52,14 @@ function updateData(){
         return
     }
     const url = jsonDataServerUrl + '/' + currentId.value
-    
+    const toISOStringNow = new Date().toISOString()
     const config = {
         url: url,
         params: {
             title: pcData.value.personalData.name.value,
             delete: false,
-            created_at: new Date().toISOString(),
+            created_at: toISOStringNow,
+            updated_at: toISOStringNow,
             content: pcData.value
         }
     }
@@ -80,13 +81,15 @@ function putJson() {
     const length = pcRows.value.length
     const url = jsonDataServerUrl + '/' + deleteId.value
     let deleteFlag = false
-    let TargetPcData = {}
+    let TargetPcDataCreated_at = ''
+    let TargetPcDataContent = {}
 
     for (let index = 0; index < length; index++) {
         const id = pcRows.value[index].id
         if (id == deleteId.value) {
             deleteFlag = true
-            TargetPcData = pcRows.value[index].content
+            TargetPcDataCreated_at = pcRows.value[index].created_at
+            TargetPcDataContent = pcRows.value[index].content
         }
     }
 
@@ -96,12 +99,14 @@ function putJson() {
      */
     if(deleteFlag == false){
         axios.get(url).then((response) => {
+            const toISOStringNow = new Date().toISOString()
             const config = {
                 url: url,
                 params: {
                     title: response.data.title,
                     delete: deleteFlag,
-                    created_at: new Date().toISOString(),
+                    created_at: response.data.created_at,
+                    updated_at: toISOStringNow,
                     content: response.data.content
                 }
             }
@@ -116,13 +121,15 @@ function putJson() {
         /**
          * 削除フラグ が trueなら、そのままputする
          */
+        const toISOStringNow = new Date().toISOString()
         const config = {
             url: url,
             params: {
                 title: pcData.value.personalData.name.value,
                 delete: deleteFlag,
-                created_at: new Date().toISOString(),
-                content: TargetPcData
+                created_at: TargetPcDataCreated_at,
+                updated_at: toISOStringNow,
+                content: TargetPcDataContent
             }
         }
         axios.put(config.url, config.params).then((response) => {
@@ -133,17 +140,43 @@ function putJson() {
     }
 }
 
+const dataFormat = new Intl.DateTimeFormat('ja-JP', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+    timeZone: 'Asia/Tokyo'
+})
+
+function isoFormatToReadableStr(isoFormatString){            
+    const isoFormatStringUTC = isoFormatString    
+    const dataObj = Date.parse(isoFormatStringUTC)
+    const formatedString = dataFormat.format(dataObj)
+    return formatedString
+}
+
 function getJson() {
     const config = {
         url: jsonDataServerUrl + '?delete=false&_sort=created_at&_order=desc'
     }
     axios.get(config.url).then((response) => {
         pcRows.value = response.data
-        /**
-         * もしも、初期値 presetPcId 0より大きければ、そのデータを読み込む
-         */
-        if(presetPcId.value > 0){
-            for (let index = 0; index < pcRows.value.length; index++) {
+        for (let index = 0; index < pcRows.value.length; index++) {
+            /**
+             * 時刻情報はISO8601形式生だと人間には不親切なので、見やすく描こうする。
+             * 変換につかうインスタンスは外で作っておく(重いらしいので使いまわす。)
+             */
+            const row = pcRows.value[index]
+            if(row.created_at){
+                row.created_at = isoFormatToReadableStr(row.created_at)
+            }
+            if(row.updated_at){
+                row.updated_at = isoFormatToReadableStr(row.updated_at)
+            }else{
+                row.updated_at = row.created_at
+            }
+            /**
+             * もしも、初期値 presetPcId 0より大きければ、そのデータを読み込む
+             */
+            if(presetPcId.value > 0){
                 if (pcRows.value[index].id == presetPcId.value) {
                     pcData.value = pcRows.value[index].content
                     setPcData(pcData)
@@ -160,12 +193,14 @@ function getJson() {
 }
 
 function postJson() {
+    const toISOStringNow = new Date().toISOString()
     const config = {
         url: jsonDataServerUrl,
         params: {
             title: pcData.value.personalData.name.value,
             delete: false,
-            created_at: new Date().toISOString(),
+            created_at: toISOStringNow,
+            updated_at: toISOStringNow,
             content: pcData.value
         }
     }
@@ -230,14 +265,14 @@ const guidelineColumns = ref([
     { name: 'commandSkillLabel', label: '指揮特技', sortable: true, field: 'commandSkillLabel' },
     { name: 'commandSkillExplanation', label: '説明', sortable: true, field: 'commandSkillExplanation' }
 ])
-
 const getTag = new Function('return function field(row){ return row.content.note.tag.value}')
 const getCreationComment = new Function('return function field(row){ return row.content.note.creationComment.value}')
 
 const pcColumns = ref([
     { name: 'id', label: 'ID', field: 'id' },
     { name: 'name', label: 'PC名', field: 'title' },
-    { name: 'date', label: '作成日時', field: 'created_at' },
+    { name: 'created_at', label: '作成日時', field: 'created_at' },
+    { name: 'updated_at', label: '更新日時', field: 'updated_at' },
     { name: 'tag', label: 'タグ', sortable: true, field: getTag() },
     { name: 'creationComment', label: '作成者メモ', sortable: true, field: getCreationComment() }
 ])
