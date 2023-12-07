@@ -430,8 +430,6 @@ function initTextByButton() {
         LLKUC PC作成表示アプリ(プロト版)
         <q-space />
         <q-btn v-if="currentId != 0" class="bg-cyan-2 text-indigo-14" label="現在のデータを更新" v-on:click="updateData" />
-        <q-btn class="bg-cyan-2 text-indigo-14" label="情報出力" v-on:click="getDataByButton" />
-        <q-btn class="bg-cyan-2 text-indigo-14" label="情報入力" v-on:click="putDataByButton" />
     </q-toolbar>
     <q-tabs v-model="tab" class="text-teal">
         <q-tab name="create" label="キャラクタ作成" />
@@ -672,7 +670,9 @@ function initTextByButton() {
                     </q-card-section>
                     <q-card-section>{{ pcData.note.creationComment.value }}</q-card-section>
                     <q-separator></q-separator>
-                    <q-card-actions>{{ pcData.note.tag.value }}</q-card-actions>
+                    <q-card-section class="bg-light-green text-white">
+                        {{ pcData.note.tag.value }}
+                    </q-card-section>
                 </q-card>
                 <q-table 
                     title="データリスト(ダブルクリックで読み込み)" 
@@ -695,13 +695,22 @@ function initTextByButton() {
                     </template>
                 </q-table>
             </div>
-            <div class="row">
-                <div class="col col-2">
-                    <q-input filled v-model="deleteId" label="表示/非表示を切り替えたいID" />
-                </div>
-                <div class="col">
-                    <q-btn class="bg-cyan-2 text-indigo-14" label="書き換え実行" v-on:click="putJson" />
-                </div>
+            <div>
+                <q-card class="bg-white text-red-10">
+                    <q-card-actions align="around" class="bg-white text-black">
+                        <q-btn class="bg-cyan-2 text-black" label="現在のデータをクリップボードに出力" v-on:click="getDataByButton" />
+                        <q-btn class="bg-cyan-2 text-red-10" label="現在のデータにJSONデータを反映(現在のデータは消えます)" v-on:click="putDataByButton" />
+                    </q-card-actions>
+                    <q-separator></q-separator>
+                    <div class="row">
+                        <div class="col col-3">
+                            <q-input dense filled v-model="deleteId" label="表示/非表示を切り替えたいID" />
+                        </div>
+                        <div class="col">
+                            <q-btn class="bg-cyan-2 text-red-10" label="書き換え実行" v-on:click="putJson" />
+                        </div>
+                    </div>
+                </q-card>
             </div>
         </q-tab-panel>
     </q-tab-panels>
