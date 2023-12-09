@@ -139,7 +139,7 @@
       "label": "能力"
     }
   },
-  "Technique": {
+  "technique": {
     "label": "技量",
     "type": {
       "key": "abilityValues",
@@ -174,7 +174,7 @@
       "label": "能力"
     }
   },
-  "LifePoint": {
+  "lifePoint": {
     "label": "LP",
     "type": {
       "key": "subAbilityValues",
@@ -639,7 +639,7 @@
     }
   },
   "DoubleDamageFromShooting": {
-    "label": "射撃格闘!!",
+    "label": "倍撃射撃!!",
     "explanation": "I属性兵器命中時の損害点×2",
     "class": "一撃系ボーナスPAD",
     "roll": [3, 4],
