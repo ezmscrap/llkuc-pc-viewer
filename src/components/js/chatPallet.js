@@ -51,15 +51,30 @@ function getAbilityValuesLabels(abilityValues) {
   return result.join('\n')
 }
 
-function getMemo(pcData, guidelines, specialSkills, abilityValues, normalSkills) {
-  const firstGuidelineLabel = guidelines.firstGuideline.label
-  const secondGuidelineLabel = guidelines.secondGuideline.label
+function getPersonalAbilityDiceLabels(personalAbilityDices){
+  const result = []
+  const keys = Object.keys(personalAbilityDices)
+  for (let index = 0; index < keys.length; index++) {
+    const key = keys[index]
+    const label = personalAbilityDices[key].personalAbility.label
+    const explanation = personalAbilityDices[key].personalAbility.explanation
+    const padMemo = [key, ": ",label, '[', explanation, ']' ].join('')
+    result.push(padMemo)
+  }
+  return result.join('\n')
+}
+
+function getMemo(pcData, guidelines, specialSkills, abilityValues, normalSkills, personalAbilityDices) {
+  const firstGuidelineLabel = guidelines.firstGuideline.guideline.label
+  const secondGuidelineLabel = guidelines.secondGuideline.guideline.label
   const specialSkillsLabel = getSpecialSkillsLabels(specialSkills)
   const abilityValuesLabels = getAbilityValuesLabels(abilityValues)
   const normalSkillsMemosLabel = getNormalSkillsLabel(normalSkills, ['command', 'msPiloting'])
+  const personalAbilityDiceLabels = getPersonalAbilityDiceLabels(personalAbilityDices)
   return [
     ['■ 指針: ', firstGuidelineLabel, '/', secondGuidelineLabel].join(''),
     ['■ 特技: ', specialSkillsLabel].join(''),
+    ['■ PAD:', personalAbilityDiceLabels].join('\n'),
     ['■ 能力値:', abilityValuesLabels].join('\n'),
     ['■ 主要技能:', normalSkillsMemosLabel].join('\n')
   ].join('\n')
@@ -189,7 +204,8 @@ export function getChatPallet(pcData, externalUrl) {
   const abilityValues = pcData.value.abilityValues
   const normalSkills = pcData.value.normalSkills
   const subAbilityValues = pcData.value.subAbilityValues
-  const memo = getMemo(pcData, guidelines, specialSkills, abilityValues, normalSkills)
+  const personalAbilityDices = pcData.value.personalAbilityDices
+  const memo = getMemo(pcData, guidelines, specialSkills, abilityValues, normalSkills, personalAbilityDices)
   const chatPallet = {
     kind: 'character',
     data: {
