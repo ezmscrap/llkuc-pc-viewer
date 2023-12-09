@@ -6,7 +6,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -46,7 +46,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -86,7 +86,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -126,7 +126,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -166,7 +166,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -208,7 +208,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -248,7 +248,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -288,7 +288,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -328,7 +328,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -368,7 +368,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -408,7 +408,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -448,7 +448,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -488,7 +488,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -528,7 +528,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -568,7 +568,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -611,7 +611,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -651,7 +651,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -691,7 +691,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -731,7 +731,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -771,7 +771,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -811,7 +811,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -851,7 +851,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -891,7 +891,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -931,7 +931,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -971,7 +971,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -1011,7 +1011,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -1051,7 +1051,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -1091,7 +1091,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },
@@ -1131,7 +1131,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1171,7 +1171,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1211,7 +1211,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1251,7 +1251,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1291,7 +1291,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1331,7 +1331,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1371,7 +1371,7 @@
         "label": "運動",
         "value": 6
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 4
       },
@@ -1411,7 +1411,7 @@
         "label": "運動",
         "value": 4
       },
-      "Technique": {
+      "technique": {
         "label": "技量",
         "value": 6
       },

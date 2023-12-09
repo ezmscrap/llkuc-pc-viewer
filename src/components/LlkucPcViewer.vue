@@ -243,7 +243,7 @@ function getRows(items) {
 const careerColumns = ref([
     { name: 'name', label: '経歴名', field: 'name' },
     { name: 'motion', label: '運動', sortable: true, field: 'motion' },
-    { name: 'Technique', label: '技量', sortable: true, field: 'Technique' },
+    { name: 'technique', label: '技量', sortable: true, field: 'technique' },
     { name: 'reflexes', label: '反応', sortable: true, field: 'reflexes' },
     { name: 'physical', label: '体力', sortable: true, field: 'physical' },
     { name: 'intelligence', label: '知力', sortable: true, field: 'intelligence' },
@@ -255,7 +255,7 @@ const careerColumns = ref([
 const guidelineColumns = ref([
     { name: 'name', label: '経歴名', field: 'name' },
     { name: 'motion', label: '運動', sortable: true, field: 'motion' },
-    { name: 'Technique', label: '技量', sortable: true, field: 'Technique' },
+    { name: 'technique', label: '技量', sortable: true, field: 'technique' },
     { name: 'reflexes', label: '反応', sortable: true, field: 'reflexes' },
     { name: 'physical', label: '体力', sortable: true, field: 'physical' },
     { name: 'intelligence', label: '知力', sortable: true, field: 'intelligence' },

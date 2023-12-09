@@ -103,7 +103,7 @@ function getParams(abilityValues) {
     },
     {
       label: '技量',
-      value: abilityValues.Technique.value + '(' + abilityValues.Technique.correction + ')'
+      value: abilityValues.technique.value + '(' + abilityValues.technique.correction + ')'
     },
     {
       label: '反応',
@@ -192,7 +192,7 @@ const commandValues = {
   },
   msShootingHitJudg: {
     label: 'MS射撃命中判定《射撃:MS操縦:武器による》',
-    ability: 'Technique',
+    ability: 'technique',
     skill: 'msPiloting',
     msLimit: true
   }
