@@ -186,8 +186,14 @@ function addNextGrowthValues(growthTypekey, pcData) {
       specialSkills: {}
     }
   }
-  pcData.value.growthValues.normalGrowthValues.values[nextKey] = nextItem
-  pcData.value.growthValues.newTypeGrowthValues.values[nextKey] = nextItem
+  /**
+   * 上で作成した nextItem Object を通常成長、覚醒成長の両方に適用したため、
+   * 片方に適用された値がもう一方にも適用された。
+   * これは作成時はメモリ上だけのオブジェクトであるため。
+   * この問題を回避するため、 nextItem をそれぞれに DeepCopy した
+   */
+  pcData.value.growthValues.normalGrowthValues.values[nextKey] = JSON.parse(JSON.stringify(nextItem))
+  pcData.value.growthValues.newTypeGrowthValues.values[nextKey] = JSON.parse(JSON.stringify(nextItem))
 }
 
 function getIsLastGrowthValues(growthValueskey, growthTypeKey, pcData) {
