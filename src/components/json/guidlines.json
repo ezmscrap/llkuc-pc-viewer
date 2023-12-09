@@ -7,7 +7,7 @@
           "label": "運動",
           "value": 7
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -42,7 +42,7 @@
           "label": "運動",
           "value": 7
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 7
         },
@@ -77,7 +77,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -112,7 +112,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -147,7 +147,7 @@
           "label": "運動",
           "value": 7
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -182,7 +182,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 1
         },
@@ -217,7 +217,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 7
         },
@@ -239,9 +239,9 @@
         }
       },
       "commandSkill": {
-        "label": "常動強化",
-        "key": "skillful",
-        "explanation": "MP1スキル無料化(回数制限なし)"
+        "label": "疾風迅雷",
+        "key": "swiftLightning",
+        "explanation": "ラウンド限定燃料3点配布"
       },
       "explanation": "能力-運動:4,能力-技量:7,能力-反応:4,能力-体力:4,能力-知力:4,能力-感応:7"
     },
@@ -252,7 +252,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 7
         },
@@ -274,9 +274,9 @@
         }
       },
       "commandSkill": {
-        "label": "特技解放",
-        "key": "unlockTheskill",
-        "explanation": "MPスキル無料化(3回)"
+        "label": "全弾解放",
+        "key": "unlockBullet",
+        "explanation": "ラウンド限定弾薬6点(どれにも使える)"
       },
       "explanation": "能力-運動:2,能力-技量:7,能力-反応:7,能力-体力:2,能力-知力:1,能力-感応:11"
     },
@@ -287,7 +287,7 @@
           "label": "運動",
           "value": 1
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -322,7 +322,7 @@
           "label": "運動",
           "value": 7
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -346,7 +346,7 @@
       "commandSkill": {
         "label": "一気呵成",
         "key": "AllAtOnce",
-        "explanation": "全与ダメージ(誘爆前)+4(回数制限なし)"
+        "explanation": "最大射程が0以外の武器の最大射程+1"
       },
       "explanation": "能力-運動:7,能力-技量:4,能力-反応:4,能力-体力:7,能力-知力:4,能力-感応:4"
     },
@@ -357,7 +357,7 @@
           "label": "運動",
           "value": 11
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -392,7 +392,7 @@
           "label": "運動",
           "value": 16
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 1
         },
@@ -427,7 +427,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 7
         },
@@ -462,7 +462,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 11
         },
@@ -497,7 +497,7 @@
           "label": "運動",
           "value": 1
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 16
         },
@@ -533,7 +533,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -568,7 +568,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -603,7 +603,7 @@
           "label": "運動",
           "value": 1
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 1
         },
@@ -639,7 +639,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 3
         },
@@ -674,7 +674,7 @@
           "label": "運動",
           "value": 5
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 5
         },
@@ -709,7 +709,7 @@
           "label": "運動",
           "value": 9
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -744,7 +744,7 @@
           "label": "運動",
           "value": 3
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 3
         },
@@ -779,7 +779,7 @@
           "label": "運動",
           "value": 5
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -814,7 +814,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 0
         },
@@ -849,7 +849,7 @@
           "label": "運動",
           "value": 3
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -871,9 +871,9 @@
         }
       },
       "commandSkill": {
-        "label": "常動強化",
-        "key": "skillful",
-        "explanation": "MP1スキル無料化(回数制限なし)"
+        "label": "疾風迅雷",
+        "key": "swiftLightning",
+        "explanation": "ラウンド限定燃料3点配布"
       },
       "explanation": "能力-運動:3,能力-技量:4,能力-反応:3,能力-体力:3,能力-知力:3,能力-感応:4"
     },
@@ -884,7 +884,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 5
         },
@@ -906,9 +906,9 @@
         }
       },
       "commandSkill": {
-        "label": "特技解放",
-        "key": "unlockTheskill",
-        "explanation": "MPスキル無料化(3回)"
+        "label": "全弾解放",
+        "key": "unlockBullet",
+        "explanation": "ラウンド限定弾薬6点(どれにも使える)"
       },
       "explanation": "能力-運動:2,能力-技量:5,能力-反応:5,能力-体力:2,能力-知力:1,能力-感応:5"
     },
@@ -919,7 +919,7 @@
           "label": "運動",
           "value": 0
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 9
         },
@@ -954,7 +954,7 @@
           "label": "運動",
           "value": 4
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 3
         },
@@ -978,7 +978,7 @@
       "commandSkill": {
         "label": "一気呵成",
         "key": "AllAtOnce",
-        "explanation": "全与ダメージ(誘爆前)+4(回数制限なし)"
+        "explanation": "最大射程が0以外の武器の最大射程+1"
       },
       "explanation": "能力-運動:4,能力-技量:3,能力-反応:3,能力-体力:4,能力-知力:3,能力-感応:3"
     },
@@ -989,7 +989,7 @@
           "label": "運動",
           "value": 5
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -1024,7 +1024,7 @@
           "label": "運動",
           "value": 9
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 0
         },
@@ -1059,7 +1059,7 @@
           "label": "運動",
           "value": 3
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 4
         },
@@ -1094,7 +1094,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 5
         },
@@ -1129,7 +1129,7 @@
           "label": "運動",
           "value": 0
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 9
         },
@@ -1165,7 +1165,7 @@
           "label": "運動",
           "value": 3
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 3
         },
@@ -1200,7 +1200,7 @@
           "label": "運動",
           "value": 2
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 2
         },
@@ -1235,7 +1235,7 @@
           "label": "運動",
           "value": 0
         },
-        "Technique": {
+        "technique": {
           "label": "技量",
           "value": 0
         },
