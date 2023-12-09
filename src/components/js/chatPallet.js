@@ -124,9 +124,9 @@ function getParams(abilityValues) {
   ]
 }
 
-function getCommand(abilityValues, normalSkills) {
+function getCommand(abilityValues, normalSkills,personalAbilityDices) {
   /**
-   * イニシアティブ判定
+   * イニシアティブ判定 などの判定を追加する部分
    * ≪使用する能力値：使用する技能：目標値≫判定
    * イニシアティブ勝負《知力：指揮：対決》
    */
@@ -143,7 +143,32 @@ function getCommand(abilityValues, normalSkills) {
     const commandLabel = ['2d6 ', label, '[', diceRollCorrection, ']'].join('')
     result.push(commandLabel)
   }
+  result.push(getPadCommand(personalAbilityDices))
+  
   return result.join('\n')
+}
+
+function getPadCommand(personalAbilityDices){
+  /**
+   * PADを追加する部分
+   */
+  const result = ['1d6 発動PAD決定[']
+  const keys = Object.keys(personalAbilityDices)
+  for (let index = 0; index < keys.length; index++) {
+    const key = keys[index]
+    const personalAbilityDice = personalAbilityDices[key]
+    const label = personalAbilityDice.label
+    const personalAbility = personalAbilityDice.personalAbility
+    let personalAbilityLabel = 'なし'
+    if(personalAbility){
+      if(personalAbility.label){
+        personalAbilityLabel = personalAbility.label
+      }
+    }
+    const padString = [label,':',personalAbilityLabel,', '].join('')
+    result.push(padString)
+  }
+  return result.join('')
 }
 
 function getDiceRollCorrection(correctionLabel1, correctionLabel2) {
@@ -191,11 +216,167 @@ const commandValues = {
     msLimit: true
   },
   msShootingHitJudg: {
-    label: 'MS射撃命中判定《射撃:MS操縦:武器による》',
+    label: 'MS射撃命中判定《技量:MS操縦:武器による》',
     ability: 'technique',
     skill: 'msPiloting',
     msLimit: true
-  }
+  },
+  covertJudg: {
+    label: '隠密判定《運動:隠蔽:目標値による》',
+    ability: 'motion',
+    skill: 'conceal',
+    msLimit: false
+  },
+  concealmentJudg: {
+    label: '隠蔽判定《技量:隠蔽:目標値による》',
+    ability: 'technique',
+    skill: 'conceal',
+    msLimit: false
+  },
+  detectionJudg: {
+    label: '探知判定《反応:隠蔽:目標値による》',
+    ability: 'reflexes',
+    skill: 'conceal',
+    msLimit: false
+  },
+  unofficialInformationJudg: {
+    label: '非公式情報判定《知力:情報通:目標値による》',
+    ability: 'intelligence',
+    skill: 'insider',
+    msLimit: false
+  },
+  officialInformationJudg: {
+    label: '公式情報判定《知力:博識:目標値による》',
+    ability: 'intelligence',
+    skill: 'Knowledgeable',
+    msLimit: false
+  },
+  understandTheWarSituationJudg: {
+    label: '戦況把握判定《知力:戦術:目標値による》',
+    ability: 'intelligence',
+    skill: 'tactics',
+    msLimit: false
+  },
+  mechanicalInvestigationJudg: {
+    label: '機械調査判定《知力:メカニクス:目標値による》',
+    ability: 'intelligence',
+    skill: 'engineering',
+    msLimit: false
+  },
+  repairJudg: {
+    label: '修理判定《技量:メカニクス:目標値による》',
+    ability: 'technique',
+    skill: 'engineering',
+    msLimit: false
+  },
+  softwareJudg: {
+    label: 'ソフトウェア判定《知力:ソフトウェア:目標値による》',
+    ability: 'intelligence',
+    skill: 'software',
+    msLimit: false
+  },
+  telecomJudg: {
+    label: '通信判定《知力:通信:目標値による》',
+    ability: 'intelligence',
+    skill: 'telecom',
+    msLimit: false
+  },
+  avoidanceJudg: {
+    label: '体術判定《運動:体術:目標値による》',
+    ability: 'motion',
+    skill: 'avoidance',
+    msLimit: false
+  },
+  martialArtsJudg: {
+    label: '個人格闘判定《運動:個人格闘:目標値による》',
+    ability: 'motion',
+    skill: 'martialArts',
+    msLimit: false
+  },
+  firearms: {
+    label: '歩兵火器判定《技量:歩兵火器:目標値による》',
+    ability: 'technique',
+    skill: 'firearms',
+    msLimit: false
+  },
+  carActionJudg: {
+    label: '車両操縦判定《運動:車両操縦:目標値による》',
+    ability: 'motion',
+    skill: 'driving',
+    msLimit: false
+  },
+  carOerationJudg: {
+    label: '車両精密操作判定《技量:車両操縦:目標値による》',
+    ability: 'technique',
+    skill: 'driving',
+    msLimit: false
+  },
+  airplaneActionJudg: {
+    label: '航空機操縦判定《運動:航空機操縦:目標値による》',
+    ability: 'motion',
+    skill: 'airplaneControl',
+    msLimit: false
+  },
+  airplaneOerationJudg: {
+    label: '航空機精密操作判定《技量:航空機操縦:目標値による》',
+    ability: 'technique',
+    skill: 'airplaneControl',
+    msLimit: false
+  },
+  spacePlanActionJudg: {
+    label: '航宙機操縦判定《運動:航宙機操縦:目標値による》',
+    ability: 'motion',
+    skill: 'spacePlaneControl',
+    msLimit: false
+  },
+  spacePlanOerationJudg: {
+    label: '航宙機精密操作判定《技量:航宙機操縦:目標値による》',
+    ability: 'technique',
+    skill: 'spacePlaneControl',
+    msLimit: false
+  },
+  msActionJudg: {
+    label: 'MS操縦判定《運動:MS操縦:目標値による》',
+    ability: 'motion',
+    skill: 'msPiloting',
+    msLimit: false
+  },
+  msOerationJudg: {
+    label: 'MS精密操作判定《技量:MS操縦:目標値による》',
+    ability: 'technique',
+    skill: 'msPiloting',
+    msLimit: false
+  },
+  shipHandlingJudg: {
+    label: '艦艇操縦判定《知力:艦艇操縦:目標値による》',
+    ability: 'intelligence',
+    skill: 'shipHandling',
+    msLimit: false
+  },
+  bombardingJudg: {
+    label: '砲撃判定《知力:砲撃:目標値による》',
+    ability: 'intelligence',
+    skill: 'bombarding',
+    msLimit: false
+  },
+  consultationJudg: {
+    label: '診察判定《知力:医術:目標値による》',
+    ability: 'intelligence',
+    skill: 'medicine',
+    msLimit: false
+  },
+  surgeryJudg: {
+    label: '手術判定《技量:医術:目標値による》',
+    ability: 'technique',
+    skill: 'medicine',
+    msLimit: false
+  },
+  artJudg: {
+    label: '芸術判定《感応:芸術:目標値による》',
+    ability: 'psychic',
+    skill: 'art',
+    msLimit: false
+  },
 }
 
 export function getChatPallet(pcData, externalUrl) {
@@ -214,7 +395,7 @@ export function getChatPallet(pcData, externalUrl) {
       iconUrl: '',
       color: '#FF0066',
       secret: false,
-      commands: getCommand(abilityValues, normalSkills),
+      commands: getCommand(abilityValues, normalSkills,personalAbilityDices),
       memo: memo,
       status: getStatus(subAbilityValues),
       params: getParams(abilityValues)
