@@ -860,7 +860,7 @@
   },
   "encouragement": {
     "label": "激励!!",
-    "explanation": "I属性兵器の命中判定に追加+1d6。",
+    "explanation": "味方のMPが1D6-1(最低1)上昇。",
     "class": "モラル系ボーナスPAD",
     "roll": [5, 6],
     "type": {
